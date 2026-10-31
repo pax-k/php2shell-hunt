@@ -325,7 +325,7 @@ candidates.
 
 | ID | Extension / surface | Class | Status | Why it is interesting | Cheapest test |
 |---|---|---|---|---|---|
-| EXT-01 | mbstring **SJIS-mac** `mb_substr` / `mb_trim` | OOB write (1–2 B) | PUBLIC report + REPO-ASAN | underflow past a 24-byte glibc allocation; public June 2026, still unfixed; repo has a controlled write | `poc`/ASAN: `mb_substr("hello",6,null,"SJIS-mac")`; notes held pending disclosure |
+| EXT-01 | mbstring **SJIS-mac** `mb_substr` / `mb_trim` | OOB write (1–2 B) | PUBLIC report + REPO-ASAN | underflow past a 24-byte glibc allocation; public June 2026, still unfixed; repo has a controlled write | held pending disclosure: trigger, notes and ASAN recipe are not in this repository |
 | EXT-02 | mbstring sibling encodings / functions | OOB | HYPOTHESIS | same `MIN(len, in_len - from)` shape may exist for `SJIS-win`, `CP932`, `ISO-2022-JP`, `UTF-7`; `mb_trim`, `mb_strimwidth`, `mb_convert_encoding` | encoding × function matrix under ASAN; start > length, omitted length |
 | EXT-03 | iconv `iconv_substr` / `iconv_strpos` | OOB / underflow | HYPOTHESIS | glibc iconv 2.41; no `SJIS-mac` special case; analogous out-of-range start | ASAN: `iconv_substr("abc", 99, null, "UTF-8")` and exotic encodings |
 | EXT-04 | DOM / XPath foreign-document UAF (GH-22554) | UAF | PUBLIC (being patched) | five UAF shapes; `DOMXPath::registerPHPFunctionNS` leaks a raw ZendMM pointer on 8.4.27 | `poc/verify_vardestroy_xpathleak.py`; upstream commits 2026-10-22/23 |
