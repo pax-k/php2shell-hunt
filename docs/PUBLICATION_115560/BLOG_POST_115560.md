@@ -2,7 +2,7 @@
 
 ### CVE-2026-115560, `var_destroy`, and a forged `zif_system` on patched PHP
 
-**Date:** 2026-10-31 · **Scope:** lab-only, `127.0.0.1` · **Proof command:** `id>/tmp/vd 2>&1` (fixed, benign) · **Status:** local draft, not published
+**Date:** 2026-10-31 · **Scope:** lab-only, `127.0.0.1` · **Proof command:** `id>/tmp/vd 2>&1` (fixed, benign) · **Status:** published with the research repository: <https://github.com/pax-k/php2shell-hunt>
 
 > **Lab boundary.** Everything ran against local containers. Targets were
 > `127.*`/`::1`; the only command executed was the fixed, benign
@@ -472,7 +472,49 @@ Candidate signals — *not* validated rules — include a record with
 keys; streaming uploads read concurrently on one SID; a handler change from
 `php_serialize` to `php`; workers dying in `session_start()` (a symptom).
 
-## 13. Closing lessons
+## 13. How this was disclosed
+
+Five rules govern every claim in this write-up. The repository is the exact
+example, not a summary of one.
+
+1. **A candidate is not a finding until a lab command shows it.** Each claim has
+   a `poc/verify_*` driver, a `lab-*/setup.sh` that rebuilds the environment, and
+   a quoted receipt. The per-artifact audit trail is
+   [`../RELEASE_MANIFEST.md`](../RELEASE_MANIFEST.md).
+2. **Read evidence and executed evidence stay separate.** ASAN says the edge
+   exists; the lab run says it fires. Where only the first exists, the chain is
+   labelled accordingly.
+3. **Controls travel with the claim.** Patched-build negative, `+0x1000` bias,
+   `allowed_classes=false`, gadget removal. A result without a negative is a
+   hypothesis, and the non-mitigations are published beside the mitigations.
+4. **Credit prior art in the same paragraph as the claim, and ship the
+   retraction.** Section 11 retracts an internal novelty claim instead of quietly
+   editing it away; the full correction record is
+   [`../NOVELTY_115560_2026-10-31.md`](../NOVELTY_115560_2026-10-31.md).
+5. **Hold what is not public yet.** One current finding is withheld pending
+   vendor contact and is not described anywhere in this repository. The hold, the
+   reason, and the release condition are recorded in
+   [`../RESPONSIBLE_PUBLICATION.md`](../RESPONSIBLE_PUBLICATION.md).
+
+Why publish this one rather than hold it: the four-stage composition was already
+public as working code (`ACD421/PHP`, `zero1` and `fa_jammy.sh`), the
+`var_destroy` UAF has been public since May 2026, and independent 115560 PoCs
+exist. Withholding a port of public work protects nobody, while the parts that
+are ours — the patched-build and arm64 result, the control matrix, the measured
+constants, and the negative results — are more useful published and falsifiable
+than held.
+
+The negative results are part of the disclosure discipline, not an
+embarrassment: 8.2/8.3/8.5 fail at the leak shape, the FPM in-band leak is
+unsolved, native x86-64 at `mmap_rnd_bits=28` needs an external seed, and a
+4.1M-execution ASAN campaign over `unserialize()`/`session_decode()` found no
+generic in-band seed. A record that only listed wins would misrepresent the state
+of the art.
+
+Corrections to any analysis here are welcome as repository issues. Corrections
+that require exploit traffic against third-party systems are not.
+
+## 14. Closing lessons
 
 **The sink is often not where the application looks.** Every "fix
 `unserialize()`" control operates above this chain; the decoder sits inside
@@ -492,9 +534,10 @@ Drupal, plugin-assisted Roundcube" is actionable; "universal PHP RCE" is not.
 may be the one saying the composition was already public. A retraction costs a
 paragraph; an overclaim costs the whole result.
 
-## 14. Reproduce it, carefully
+## 15. Reproduce it, carefully
 
-Everything is local and containerised:
+Everything is local and containerised. The full tree, including the verifiers
+and every lab, is at <https://github.com/pax-k/php2shell-hunt>:
 
 ```sh
 cd lab-115560 && docker compose up -d && cd ..

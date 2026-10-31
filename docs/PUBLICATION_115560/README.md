@@ -1,8 +1,8 @@
 # Publication package — CVE-2026-115560 + var_destroy
 
-**Status:** local draft. **No external send or publication has occurred.**
-The user decision was: *document everything locally and write security reports
-and a blog post containing everything, in `.md` format.*
+**Status:** published 2026-10-31 with <https://github.com/pax-k/php2shell-hunt>.
+The package was written as a local draft; it is now the public record, with the
+hold policy in [`../RESPONSIBLE_PUBLICATION.md`](../RESPONSIBLE_PUBLICATION.md).
 
 **Scope:** LAB-ONLY. Targets are `127.0.0.1`; the only command executed is the
 fixed benign `id>/tmp/vd 2>&1`; there is no arbitrary-command interface.

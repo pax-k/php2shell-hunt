@@ -6,8 +6,8 @@ authors:
   - family-names: Popa
     given-names: Andrei
     affiliation: PaxDynamics
-repository-code: "https://github.com/ikow/php2shell-hunt"
-url: "https://github.com/ikow/php2shell-hunt"
+repository-code: "https://github.com/pax-k/php2shell-hunt"
+url: "https://github.com/pax-k/php2shell-hunt"
 license: Apache-2.0
 version: 0.1.0
 date-released: "2026-10-31"

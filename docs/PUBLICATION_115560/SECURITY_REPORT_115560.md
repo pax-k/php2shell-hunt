@@ -2,7 +2,7 @@
 
 **Document ID:** `SECURITY_REPORT_115560`
 **Date:** 2026-10-31
-**Repository:** `github.com/ikow/php2shell-hunt`
+**Repository:** `github.com/pax-k/php2shell-hunt`
 **Frozen tree:** git HEAD `ed1181edc1ec0d57166e815c3f53bab92b0d95ee`
 **Classification:** PUBLISHED RESEARCH REPORT (repo publication, 2026-10-31)
 **Evidence grade:** every positive below was produced by a lab command in this
