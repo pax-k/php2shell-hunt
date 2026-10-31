@@ -545,6 +545,25 @@ python3 poc/verify_115560_vardestroy.py --target 127.0.0.1:18200 \
   --container php2shell-115560-8427 --build 8.4.27 run
 ```
 
+The reproducing code, by claim:
+
+| Claim | Code | Command |
+|---|---|---|
+| 115560 → `var_destroy` → terminal | [`poc/verify_115560_vardestroy.py`](https://github.com/pax-k/php2shell-hunt/blob/main/poc/verify_115560_vardestroy.py) | `--build 8.4.27 run` |
+| default `cleanup=On` race | [`poc/verify_115560_race.py`](https://github.com/pax-k/php2shell-hunt/blob/main/poc/verify_115560_race.py) | `--settle 0.7 --attempts 3` |
+| Drupal 11.4.11 P5 profile | [`poc/verify_115560_drupal.py`](https://github.com/pax-k/php2shell-hunt/blob/main/poc/verify_115560_drupal.py) | profile-specific delta |
+| Roundcube 1.6.11 profile | [`poc/verify_115560_roundcube.py`](https://github.com/pax-k/php2shell-hunt/blob/main/poc/verify_115560_roundcube.py) | plugin-assisted |
+| `__wakeup` / `__unserialize` negatives | [`poc/verify_115560_wakeup.py`](https://github.com/pax-k/php2shell-hunt/blob/main/poc/verify_115560_wakeup.py) | expected negative |
+| ASAN UAF, minimal payload | [`poc/verify_var_destroy_uaf.php`](https://github.com/pax-k/php2shell-hunt/blob/main/poc/verify_var_destroy_uaf.php) | `php -d ...` under ASAN |
+| reclaim → forged object → `zif_system` | [`poc/verify_vardestroy_rce.py`](https://github.com/pax-k/php2shell-hunt/blob/main/poc/verify_vardestroy_rce.py) | stock ZendMM |
+| arm64 18-bit scan / GH-22554 seed / LFI front-ends | [`verify_vardestroy_bruteforce.py`](https://github.com/pax-k/php2shell-hunt/blob/main/poc/verify_vardestroy_bruteforce.py), [`verify_vardestroy_xpathleak.py`](https://github.com/pax-k/php2shell-hunt/blob/main/poc/verify_vardestroy_xpathleak.py), [`verify_vardestroy_lfi.py`](https://github.com/pax-k/php2shell-hunt/blob/main/poc/verify_vardestroy_lfi.py) | one front-end each |
+| 8.4 series positive / negative / bias | [`poc/verify_matrix.py`](https://github.com/pax-k/php2shell-hunt/blob/main/poc/verify_matrix.py) | six builds |
+| lab bring-up | [`lab-115560/docker-compose.yml`](https://github.com/pax-k/php2shell-hunt/blob/main/lab-115560/docker-compose.yml) | loopback only |
+
+Every one of those files is the version that produced the receipts quoted above;
+the per-command outputs are in
+[`EVIDENCE_AND_CREDITS_115560.md`](./EVIDENCE_AND_CREDITS_115560.md).
+
 The race uses `poc/verify_115560_race.py` on `:18204` with `--settle 0.7
 --attempts 3`; Drupal and Roundcube have their own drivers and constants. Do
 not reuse the direct delta across them: the request shape changes the carrier
