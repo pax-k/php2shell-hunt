@@ -1,0 +1,138 @@
+# Matrix lab — one service per default-install model (G3) plus distro
+# defaults (G7). Every row is the stock official image with the untouched
+# php.ini-production, a single prefork child, and an `/out` proof volume.
+#
+#   docker compose up -d                 # matrix rows (8.2 / 8.3 / 8.4 / 8.5)
+#   docker compose --profile distro up -d  # distro-default rows (G7)
+#
+# Run the triad:  scripts/matrix.sh --proof lab-matrix/out/p1
+
+x-apache: &apache
+  volumes:
+    - ../lab-pure-modphp/webroot:/var/www/html:ro
+    - ./out:/out
+    - ../lab-pure-modphp/apache-single.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+  command: >
+    bash -c "cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini;
+             chown -R www-data:www-data /out;
+             exec apache2-foreground"
+
+x-default: &default
+  volumes:
+    - ../lab-pure-modphp/webroot:/var/www/html:ro
+    - ./out:/out
+    - ../lab-pure-modphp/apache-single.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+  # No php.ini: the image's compiled defaults (memory_limit=128M,
+  # session.upload_progress.enabled=On) — "as installed".
+  command: >
+    bash -c "chown -R www-data:www-data /out; exec apache2-foreground"
+
+services:
+  p826:
+    <<: *apache
+    image: php:8.2.34-apache
+    container_name: php2shell-matrix-826
+    ports: ["18160:80"]
+
+  p827:
+    <<: *apache
+    image: php:8.2.35-apache
+    container_name: php2shell-matrix-827
+    ports: ["18161:80"]
+
+  p835:
+    <<: *apache
+    image: php:8.3.35-apache
+    container_name: php2shell-matrix-835
+    ports: ["18162:80"]
+
+  p836:
+    <<: *apache
+    image: php:8.3.36-apache
+    container_name: php2shell-matrix-836
+    ports: ["18163:80"]
+
+  # 8.4 patch series — the same leak shape/geometry holds across the mid/late
+  # series (8.4.1 leaks but yields no usable pointers).
+  p8410:
+    <<: *apache
+    image: php:8.4.10-apache
+    container_name: php2shell-matrix-8410
+    ports: ["18126:80"]
+
+  p8420:
+    <<: *apache
+    image: php:8.4.20-apache
+    container_name: php2shell-matrix-8420
+    ports: ["18127:80"]
+
+  p8423:
+    <<: *apache
+    image: php:8.4.23-apache
+    container_name: php2shell-matrix-8423
+    ports: ["18123:80"]
+
+  p8424:
+    <<: *apache
+    image: php:8.4.24-apache
+    container_name: php2shell-matrix-8424
+    ports: ["18124:80"]
+
+  p8425:
+    <<: *apache
+    image: php:8.4.25-apache
+    container_name: php2shell-matrix-8425
+    ports: ["18125:80"]
+
+  p8426:
+    <<: *apache
+    image: php:8.4.26-apache
+    container_name: php2shell-matrix-8426
+    ports: ["18164:80"]
+
+  p8427:
+    <<: *apache
+    image: php:8.4.27-apache
+    container_name: php2shell-matrix-8427
+    ports: ["18165:80"]
+
+  p8511:
+    <<: *apache
+    image: php:8.5.11-apache
+    container_name: php2shell-matrix-8511
+    ports: ["18166:80"]
+
+  p8512:
+    <<: *apache
+    image: php:8.5.12-apache
+    container_name: php2shell-matrix-8512
+    ports: ["18167:80"]
+
+  # ---- G7: "as installed" (compiled defaults, no php.ini) ----
+  default-vuln:
+    <<: *default
+    profiles: ["distro"]
+    image: php:8.4.26-apache
+    container_name: php2shell-matrix-default-vuln
+    ports: ["18170:80"]
+
+  default-patched:
+    <<: *default
+    profiles: ["distro"]
+    image: php:8.4.27-apache
+    container_name: php2shell-matrix-default-patched
+    ports: ["18175:80"]
+
+  # ---- G7: a real distro package (Ubuntu 24.04 apt libapache2-mod-php) ----
+  ubuntu-modphp:
+    profiles: ["distro"]
+    build:
+      context: .
+      dockerfile: Dockerfile.distro
+    container_name: php2shell-matrix-ubuntu
+    ports: ["18171:80"]
+    volumes:
+      - ./out:/out
+    command: >
+      bash -c "chown -R www-data:www-data /out;
+               apache2ctl -D FOREGROUND"

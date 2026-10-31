@@ -1,0 +1,12 @@
+id: php-sink-dispatch
+language: php
+severity: warning
+message: dynamic dispatch sink
+rule:
+  any:
+    - pattern: call_user_func($$$)
+    - pattern: call_user_func_array($$$)
+    - pattern: forward_static_call($$$)
+    - pattern: forward_static_call_array($$$)
+    - pattern: ReflectionFunction($$$)
+    - pattern: ReflectionMethod($$$)

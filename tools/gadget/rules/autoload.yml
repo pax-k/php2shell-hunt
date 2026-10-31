@@ -1,0 +1,11 @@
+id: php-autoload-hook
+language: php
+severity: info
+message: autoload or capability probe
+rule:
+  any:
+    - pattern: spl_autoload_register($$$)
+    - pattern: class_exists($$$)
+    - pattern: method_exists($$$)
+    - pattern: is_callable($$$)
+    - pattern: property_exists($$$)

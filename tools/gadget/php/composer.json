@@ -1,0 +1,11 @@
+{
+  "name": "php2shell/gadget-facts",
+  "description": "PHP-Parser fact emitter for the cross-class gadget graph",
+  "require": {
+    "php": ">=8.1",
+    "nikic/php-parser": "^5.0"
+  },
+  "config": {
+    "sort-packages": true
+  }
+}

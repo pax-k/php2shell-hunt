@@ -1,0 +1,16 @@
+{
+  "scope": "deferred non-memory backlog; open only when the active chain requires an oracle",
+  "status": "deferred-taxonomy-only",
+  "classes": [
+    {"name": "authentication", "examples": "session fixation, MFA bypass, password reset", "status": "deferred-not-inventoried"},
+    {"name": "authorization", "examples": "IDOR, missing capability checks, tenant isolation", "status": "deferred-not-inventoried"},
+    {"name": "business-logic", "examples": "price/quantity, refunds, raceable coupons", "status": "deferred-not-inventoried"},
+    {"name": "crypto-misuse", "examples": "ECB, static IV, weak KDF, signature bypass", "status": "deferred-not-inventoried"},
+    {"name": "side-channels", "examples": "timing, error oracle, cache", "status": "deferred-not-inventoried"},
+    {"name": "race-conditions", "examples": "TOCTOU, session/file races, queue double-consume", "status": "deferred-not-inventoried"},
+    {"name": "xss-csrf", "examples": "stored/reflected XSS, CSRF, postMessage", "status": "deferred-not-inventoried"},
+    {"name": "cache-poisoning", "examples": "host header, key confusion, purging", "status": "deferred-not-inventoried"},
+    {"name": "request-smuggling", "examples": "CL/TE, HTTP/2 downgrade, header normalization", "status": "deferred-not-inventoried"},
+    {"name": "supply-chain", "examples": "composer typosquat, abandoned packages, build scripts", "status": "deferred-not-inventoried"}
+  ]
+}

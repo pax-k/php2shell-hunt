@@ -1,0 +1,3 @@
+# ast-grep project config for docs/GADGET_SWEEP.md
+ruleDirs:
+  - rules

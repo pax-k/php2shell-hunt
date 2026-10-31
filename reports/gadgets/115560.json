@@ -1,0 +1,572 @@
+{
+  "candidates": [
+    {
+      "categories": [
+        "file",
+        "unserialize"
+      ],
+      "class": "CachePurge",
+      "file": "lab-115560/webroot/index.php",
+      "kind": "reentry",
+      "line": 29,
+      "magic": true,
+      "method": "__destruct",
+      "score": 100,
+      "sinks": [
+        {
+          "category": "unserialize",
+          "line": 85,
+          "rule": "php-sink-unserialize",
+          "text": "unserialize('R:' . $ref . ';')"
+        },
+        {
+          "category": "file",
+          "line": 45,
+          "rule": "php-sink-file",
+          "text": "file_put_contents('/tmp/meas_pid', getmypid())"
+        },
+        {
+          "category": "file",
+          "line": 51,
+          "rule": "php-sink-file",
+          "text": "file_put_contents('/tmp/meas_pid', getmypid())"
+        },
+        {
+          "category": "file",
+          "line": 65,
+          "rule": "php-sink-file",
+          "text": "file_put_contents('/tmp/meas_pid', getmypid())"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "file",
+        "unserialize"
+      ],
+      "class": "CacheWakeup",
+      "file": "lab-115560/webroot/wakeup.php",
+      "kind": "reentry",
+      "line": 43,
+      "magic": true,
+      "method": "__wakeup",
+      "score": 100,
+      "sinks": [
+        {
+          "category": "unserialize",
+          "line": 59,
+          "rule": "php-sink-unserialize",
+          "text": "unserialize('R:' . $ref . ';')"
+        },
+        {
+          "category": "file",
+          "line": 48,
+          "rule": "php-sink-file",
+          "text": "file_put_contents('/tmp/meas_pid', getmypid())"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "file",
+        "unserialize"
+      ],
+      "class": "CacheWakeupU",
+      "file": "lab-115560/webroot/wakeup.php",
+      "kind": "reentry",
+      "line": 77,
+      "magic": true,
+      "method": "__unserialize",
+      "score": 100,
+      "sinks": [
+        {
+          "category": "unserialize",
+          "line": 96,
+          "rule": "php-sink-unserialize",
+          "text": "unserialize('R:' . $ref . ';')"
+        },
+        {
+          "category": "file",
+          "line": 85,
+          "rule": "php-sink-file",
+          "text": "file_put_contents('/tmp/meas_pid', getmypid())"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "file"
+      ],
+      "class": "CachePurge",
+      "file": "lab-115560/webroot/noswitch.php",
+      "kind": "file",
+      "line": 11,
+      "magic": true,
+      "method": "__destruct",
+      "score": 60,
+      "sinks": [
+        {
+          "category": "file",
+          "line": 13,
+          "rule": "php-sink-file",
+          "text": "file_put_contents('/tmp/noswitch_dtor', getmypid())"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "file"
+      ],
+      "class": "",
+      "file": "lab-115560/webroot/decoy.php",
+      "kind": "file",
+      "line": 5,
+      "magic": false,
+      "method": "dlog",
+      "score": 30,
+      "sinks": [
+        {
+          "category": "file",
+          "line": 5,
+          "rule": "php-sink-file",
+          "text": "file_put_contents('/tmp/dtor_log', sprintf(\"%.6f %s %s\\n\", microtime(true), $_SERVER['REQUEST_URI'] ?? '-', $s), FILE_APPEND)"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "file"
+      ],
+      "class": "",
+      "file": "lab-115560/webroot/index.php",
+      "kind": "file",
+      "line": 20,
+      "magic": false,
+      "method": "dlog",
+      "score": 30,
+      "sinks": [
+        {
+          "category": "file",
+          "line": 22,
+          "rule": "php-sink-file",
+          "text": "file_put_contents('/tmp/dtor_log', $s . \"\\n\", FILE_APPEND)"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "file"
+      ],
+      "class": "",
+      "file": "lab-115560/webroot/scan_prefix.php",
+      "kind": "file",
+      "line": 16,
+      "magic": false,
+      "method": "<file>",
+      "score": 30,
+      "sinks": [
+        {
+          "category": "file",
+          "line": 16,
+          "rule": "php-sink-file",
+          "text": "fwrite(STDERR, \"bad args\\n\")"
+        },
+        {
+          "category": "file",
+          "line": 20,
+          "rule": "php-sink-file",
+          "text": "fopen(\"/proc/$pid/mem\", \"rb\")"
+        },
+        {
+          "category": "file",
+          "line": 21,
+          "rule": "php-sink-file",
+          "text": "fopen(\"/proc/$pid/mem\", \"rb\")"
+        },
+        {
+          "category": "file",
+          "line": 23,
+          "rule": "php-sink-file",
+          "text": "fwrite(STDERR, \"no maps/mem\\n\")"
+        },
+        {
+          "category": "file",
+          "line": 78,
+          "rule": "php-sink-file",
+          "text": "fwrite(STDERR, \"no hits\\n\")"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "file"
+      ],
+      "class": "",
+      "file": "lab-115560/webroot/scan_value.php",
+      "kind": "file",
+      "line": 9,
+      "magic": false,
+      "method": "<file>",
+      "score": 30,
+      "sinks": [
+        {
+          "category": "file",
+          "line": 9,
+          "rule": "php-sink-file",
+          "text": "fwrite(STDERR, \"bad args\\n\")"
+        },
+        {
+          "category": "file",
+          "line": 10,
+          "rule": "php-sink-file",
+          "text": "fopen(\"/proc/$pid/mem\", \"rb\")"
+        },
+        {
+          "category": "file",
+          "line": 11,
+          "rule": "php-sink-file",
+          "text": "fwrite(STDERR, \"no maps/mem\\n\")"
+        },
+        {
+          "category": "file",
+          "line": 48,
+          "rule": "php-sink-file",
+          "text": "fwrite(STDERR, \"value_hits=$found\\n\")"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "file"
+      ],
+      "class": "",
+      "file": "lab-115560/webroot/vd_scan.php",
+      "kind": "file",
+      "line": 9,
+      "magic": false,
+      "method": "<file>",
+      "score": 30,
+      "sinks": [
+        {
+          "category": "file",
+          "line": 9,
+          "rule": "php-sink-file",
+          "text": "fwrite(STDERR, \"bad args\\n\")"
+        },
+        {
+          "category": "file",
+          "line": 11,
+          "rule": "php-sink-file",
+          "text": "fwrite(STDERR, \"no maps\\n\")"
+        },
+        {
+          "category": "file",
+          "line": 12,
+          "rule": "php-sink-file",
+          "text": "fopen(\"/proc/$pid/mem\", \"rb\")"
+        },
+        {
+          "category": "file",
+          "line": 13,
+          "rule": "php-sink-file",
+          "text": "fwrite(STDERR, \"no mem\\n\")"
+        },
+        {
+          "category": "file",
+          "line": 54,
+          "rule": "php-sink-file",
+          "text": "fwrite(STDERR, \"not found (scanned $scanned bytes)\\n\")"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "file"
+      ],
+      "class": "",
+      "file": "lab-115560/webroot/wakeup.php",
+      "kind": "file",
+      "line": 21,
+      "magic": false,
+      "method": "dlog",
+      "score": 30,
+      "sinks": [
+        {
+          "category": "file",
+          "line": 23,
+          "rule": "php-sink-file",
+          "text": "file_put_contents('/tmp/wakeup_log', $s . \"\\n\", FILE_APPEND)"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "candidates": 10,
+    "magic_methods": 17,
+    "markers": 3,
+    "reentry": 3
+  },
+  "label": "115560",
+  "magic_methods": [
+    {
+      "categories": [],
+      "class": "CachePurge",
+      "file": "lab-115560/webroot/decoy.php",
+      "line": 10,
+      "method": "__destruct"
+    },
+    {
+      "categories": [
+        "file"
+      ],
+      "class": "CachePurge",
+      "file": "lab-115560/webroot/index.php",
+      "line": 29,
+      "method": "__destruct"
+    },
+    {
+      "categories": [
+        "file"
+      ],
+      "class": "CachePurge",
+      "file": "lab-115560/webroot/index.php",
+      "line": 29,
+      "method": "__destruct"
+    },
+    {
+      "categories": [
+        "file"
+      ],
+      "class": "CachePurge",
+      "file": "lab-115560/webroot/index.php",
+      "line": 29,
+      "method": "__destruct"
+    },
+    {
+      "categories": [
+        "file"
+      ],
+      "class": "CachePurge",
+      "file": "lab-115560/webroot/index.php",
+      "line": 29,
+      "method": "__destruct"
+    },
+    {
+      "categories": [
+        "file",
+        "unserialize"
+      ],
+      "class": "CachePurge",
+      "file": "lab-115560/webroot/index.php",
+      "line": 29,
+      "method": "__destruct"
+    },
+    {
+      "categories": [
+        "file"
+      ],
+      "class": "CachePurge",
+      "file": "lab-115560/webroot/noswitch.php",
+      "line": 11,
+      "method": "__destruct"
+    },
+    {
+      "categories": [
+        "file"
+      ],
+      "class": "CachePurge",
+      "file": "lab-115560/webroot/noswitch.php",
+      "line": 11,
+      "method": "__destruct"
+    },
+    {
+      "categories": [],
+      "class": "CachePurge",
+      "file": "lab-115560/webroot/seed.php",
+      "line": 17,
+      "method": "__destruct"
+    },
+    {
+      "categories": [],
+      "class": "CacheWakeup",
+      "file": "lab-115560/webroot/wakeup.php",
+      "line": 43,
+      "method": "__wakeup"
+    },
+    {
+      "categories": [
+        "file"
+      ],
+      "class": "CacheWakeup",
+      "file": "lab-115560/webroot/wakeup.php",
+      "line": 43,
+      "method": "__wakeup"
+    },
+    {
+      "categories": [
+        "file",
+        "unserialize"
+      ],
+      "class": "CacheWakeup",
+      "file": "lab-115560/webroot/wakeup.php",
+      "line": 43,
+      "method": "__wakeup"
+    },
+    {
+      "categories": [],
+      "class": "CacheWakeup",
+      "file": "lab-115560/webroot/wakeup.php",
+      "line": 66,
+      "method": "__destruct"
+    },
+    {
+      "categories": [],
+      "class": "CacheWakeupU",
+      "file": "lab-115560/webroot/wakeup.php",
+      "line": 77,
+      "method": "__unserialize"
+    },
+    {
+      "categories": [
+        "file"
+      ],
+      "class": "CacheWakeupU",
+      "file": "lab-115560/webroot/wakeup.php",
+      "line": 77,
+      "method": "__unserialize"
+    },
+    {
+      "categories": [
+        "file",
+        "unserialize"
+      ],
+      "class": "CacheWakeupU",
+      "file": "lab-115560/webroot/wakeup.php",
+      "line": 77,
+      "method": "__unserialize"
+    },
+    {
+      "categories": [],
+      "class": "CacheWakeupU",
+      "file": "lab-115560/webroot/wakeup.php",
+      "line": 103,
+      "method": "__destruct"
+    }
+  ],
+  "markers": [
+    {
+      "file": "wakeup.php",
+      "line": 110,
+      "text": "@ini_set('session.serialize_handler', 'php');"
+    },
+    {
+      "file": "decoy.php",
+      "line": 22,
+      "text": "@ini_set('session.serialize_handler', 'php');"
+    },
+    {
+      "file": "index.php",
+      "line": 94,
+      "text": "@ini_set('session.serialize_handler', 'php');"
+    }
+  ],
+  "php_files": 10,
+  "root": "lab-115560/webroot",
+  "schema": 1,
+  "semgrep": {
+    "errors": 0,
+    "results": [
+      {
+        "file": "lab-115560/webroot/decoy.php",
+        "line": 22,
+        "message": "session serialization handler is switched at runtime",
+        "rule": "php-session-handler-switch"
+      },
+      {
+        "file": "lab-115560/webroot/index.php",
+        "line": 85,
+        "message": "magic method re-enters deserialization",
+        "rule": "php-magic-reentry"
+      },
+      {
+        "file": "lab-115560/webroot/index.php",
+        "line": 94,
+        "message": "session serialization handler is switched at runtime",
+        "rule": "php-session-handler-switch"
+      },
+      {
+        "file": "lab-115560/webroot/wakeup.php",
+        "line": 59,
+        "message": "magic method re-enters deserialization",
+        "rule": "php-magic-reentry"
+      },
+      {
+        "file": "lab-115560/webroot/wakeup.php",
+        "line": 96,
+        "message": "magic method re-enters deserialization",
+        "rule": "php-magic-reentry"
+      },
+      {
+        "file": "lab-115560/webroot/wakeup.php",
+        "line": 110,
+        "message": "session serialization handler is switched at runtime",
+        "rule": "php-session-handler-switch"
+      }
+    ],
+    "status": "ok"
+  },
+  "tools": {
+    "ast-grep": {
+      "matches": 34,
+      "status": "ok"
+    },
+    "ctags": {
+      "status": "ok"
+    },
+    "rg": {
+      "status": "ok"
+    },
+    "semgrep": {
+      "errors": 0,
+      "results": [
+        {
+          "file": "lab-115560/webroot/decoy.php",
+          "line": 22,
+          "message": "session serialization handler is switched at runtime",
+          "rule": "php-session-handler-switch"
+        },
+        {
+          "file": "lab-115560/webroot/index.php",
+          "line": 85,
+          "message": "magic method re-enters deserialization",
+          "rule": "php-magic-reentry"
+        },
+        {
+          "file": "lab-115560/webroot/index.php",
+          "line": 94,
+          "message": "session serialization handler is switched at runtime",
+          "rule": "php-session-handler-switch"
+        },
+        {
+          "file": "lab-115560/webroot/wakeup.php",
+          "line": 59,
+          "message": "magic method re-enters deserialization",
+          "rule": "php-magic-reentry"
+        },
+        {
+          "file": "lab-115560/webroot/wakeup.php",
+          "line": 96,
+          "message": "magic method re-enters deserialization",
+          "rule": "php-magic-reentry"
+        },
+        {
+          "file": "lab-115560/webroot/wakeup.php",
+          "line": 110,
+          "message": "session serialization handler is switched at runtime",
+          "rule": "php-session-handler-switch"
+        }
+      ],
+      "status": "ok"
+    }
+  }
+}

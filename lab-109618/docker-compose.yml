@@ -1,0 +1,23 @@
+# CVE-2026-109618 OOM-corruption lab (mod_php, single prefork worker).
+#
+# SYS_PTRACE + seccomp=unconfined are required only so the lab-assisted POC
+# can read /proc/<pid>/maps and /proc/<pid>/mem to source libphp + chunk.
+# The fire itself is plain HTTP.
+#
+# On Apple Silicon use `platform: linux/arm64` (default below); on x86_64
+# change to linux/amd64 and use `php:8.4.26-apache` (or the local arm64 tag).
+services:
+  php:
+    image: php:8.4.26-apache
+    platform: linux/arm64
+    container_name: php2shell-109618
+    ports: ["18150:80"]
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    volumes:
+      - ../lab-pure-modphp/webroot:/var/www/html:ro
+      - ./php.ini:/usr/local/etc/php/conf.d/zz-109618.ini:ro
+      - ../lab-pure-modphp/apache-single.conf:/etc/apache2/conf-enabled/zz-single.conf:ro
+    command: >
+      bash -c "chown -R www-data:www-data /var/www/html 2>/dev/null || true;
+               exec apache2-foreground"

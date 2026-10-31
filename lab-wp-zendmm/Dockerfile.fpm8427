@@ -1,0 +1,8 @@
+# Patched PHP 8.4.27 FPM with the extensions WordPress needs (mysqli) and a
+# single pinned worker so the /proc latch has an unambiguous target.
+# disable_functions is set to exercise the bypass control: the chain calls
+# zif_system directly (C-level), not the userland functions.
+FROM php:8.4.27-fpm
+RUN docker-php-ext-install mysqli pdo_mysql
+RUN printf '[www]\npm = static\npm.max_children = 1\nphp_admin_value[disable_functions] = system,exec,shell_exec,passthru,popen,proc_open\n' \
+      > /usr/local/etc/php-fpm.d/zz-vd.conf

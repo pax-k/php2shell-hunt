@@ -1,0 +1,34 @@
+# Defender lab: the SAME vulnerable PHP 8.2.34 image as lab/, but with
+# the advisory's administrative mitigations applied through FPM pool
+# php_admin_value (which per-directory .user.ini CANNOT override):
+#
+#   - session.upload_progress.enabled = 0   (kills the rfc1867 session
+#     callback path: no upload-progress session writes/decodes -> Chains
+#     A/B/C pre-auth injection + both CVE-2026-109619 consumers die)
+#   - session.serialize_handler = php_serialize (consistent everywhere ->
+#     the cross-directory mismatch precondition of Chain C dies)
+#   - session.use_strict_mode = 1, use_only_cookies = 1 (fixation hardening)
+#   - memory_limit = -1 (removes the controllable OOM trigger of
+#     CVE-2026-109618 — at the documented cost of no PHP-level memory cap;
+#     the advisory calls this a partial, temporary mitigation)
+#
+# verify_defender.py fires each trigger against this lab and asserts the
+# precondition is gone. "The defender proving itself" — with evidence.
+services:
+  php:
+    image: php:8.2-fpm
+    container_name: php2shell-defender
+    volumes:
+      - ../lab-chain-a/webroot:/var/www/html
+      - ./pool.conf:/usr/local/etc/php-fpm.d/zz-defender.conf:ro
+    command: >
+      bash -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && php-fpm"
+
+  nginx:
+    image: nginx:alpine
+    container_name: php2shell-defender-nginx
+    ports: ["18083:80"]
+    volumes:
+      - ../lab-chain-a/webroot:/var/www/html:ro
+      - ../lab-chain-a/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on: [php]

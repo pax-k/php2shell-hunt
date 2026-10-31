@@ -1,0 +1,184 @@
+{
+  "candidates": [
+    {
+      "categories": [
+        "file",
+        "terminal"
+      ],
+      "class": "FileLogger",
+      "file": "lab/webroot/api/endpoint.php",
+      "kind": "terminal",
+      "line": 16,
+      "magic": true,
+      "method": "__destruct",
+      "score": 90,
+      "sinks": [
+        {
+          "category": "terminal",
+          "line": 22,
+          "rule": "php-sink-terminal",
+          "text": "shell_exec($this->cmd)"
+        },
+        {
+          "category": "file",
+          "line": 26,
+          "rule": "php-sink-file",
+          "text": "file_put_contents('/tmp/rce-proof.txt', $out, FILE_APPEND)"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "terminal"
+      ],
+      "class": "",
+      "file": "lab/webroot/pwn_probe.php",
+      "kind": "terminal",
+      "line": 10,
+      "magic": false,
+      "method": "lab_pwn",
+      "score": 45,
+      "sinks": [
+        {
+          "category": "terminal",
+          "line": 10,
+          "rule": "php-sink-terminal",
+          "text": "system('CALIB')"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "file"
+      ],
+      "class": "",
+      "file": "lab/webroot/lfi.php",
+      "kind": "file",
+      "line": 11,
+      "magic": false,
+      "method": "<file>",
+      "score": 30,
+      "sinks": [
+        {
+          "category": "file",
+          "line": 11,
+          "rule": "php-sink-file",
+          "text": "include($page)"
+        }
+      ]
+    },
+    {
+      "categories": [
+        "file"
+      ],
+      "class": "",
+      "file": "lab/webroot/vuln.php",
+      "kind": "file",
+      "line": 3,
+      "magic": false,
+      "method": "<file>",
+      "score": 30,
+      "sinks": [
+        {
+          "category": "file",
+          "line": 3,
+          "rule": "php-sink-file",
+          "text": "include($page)"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "candidates": 4,
+    "magic_methods": 3,
+    "markers": 3,
+    "reentry": 0
+  },
+  "label": "lab",
+  "magic_methods": [
+    {
+      "categories": [
+        "terminal"
+      ],
+      "class": "FileLogger",
+      "file": "lab/webroot/api/endpoint.php",
+      "line": 16,
+      "method": "__destruct"
+    },
+    {
+      "categories": [
+        "terminal"
+      ],
+      "class": "FileLogger",
+      "file": "lab/webroot/api/endpoint.php",
+      "line": 16,
+      "method": "__destruct"
+    },
+    {
+      "categories": [
+        "file",
+        "terminal"
+      ],
+      "class": "FileLogger",
+      "file": "lab/webroot/api/endpoint.php",
+      "line": 16,
+      "method": "__destruct"
+    }
+  ],
+  "markers": [
+    {
+      "file": "index.php",
+      "line": 5,
+      "text": "echo \"upload_progress \" . ini_get('session.upload_progress.enabled') . \"\\n\";"
+    },
+    {
+      "file": "probe.php",
+      "line": 6,
+      "text": "echo \"upload_progress \" . ini_get('session.upload_progress.enabled') . \"\\n\";"
+    },
+    {
+      "file": "api/handler_probe.php",
+      "line": 2,
+      "text": "echo \"handler=\" . ini_get(\"session.serialize_handler\") . \""
+    }
+  ],
+  "php_files": 14,
+  "root": "lab/webroot",
+  "schema": 1,
+  "semgrep": {
+    "errors": 0,
+    "results": [
+      {
+        "file": "lab/webroot/api/endpoint.php",
+        "line": 22,
+        "message": "magic method reaches a terminal command sink",
+        "rule": "php-magic-terminal"
+      }
+    ],
+    "status": "ok"
+  },
+  "tools": {
+    "ast-grep": {
+      "matches": 6,
+      "status": "ok"
+    },
+    "ctags": {
+      "status": "ok"
+    },
+    "rg": {
+      "status": "ok"
+    },
+    "semgrep": {
+      "errors": 0,
+      "results": [
+        {
+          "file": "lab/webroot/api/endpoint.php",
+          "line": 22,
+          "message": "magic method reaches a terminal command sink",
+          "rule": "php-magic-terminal"
+        }
+      ],
+      "status": "ok"
+    }
+  }
+}

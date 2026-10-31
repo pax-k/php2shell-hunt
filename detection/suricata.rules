@@ -1,0 +1,9 @@
+alert http any any -> any any (msg:"PHP2SHELL upload_progress field in multipart POST"; flow:to_server,established; http.method; content:"POST"; http.request_body; content:"PHP_SESSION_UPLOAD_PROGRESS"; nocase; sid:2026200; rev:1;)
+
+alert http any any -> any any (msg:"PHP2SHELL PHPSESSID form-field session fixation"; flow:to_server,established; http.method; content:"POST"; http.request_body; content:"name=\"PHPSESSID\""; nocase; sid:2026201; rev:1;)
+
+alert http any any -> any any (msg:"PHP2SHELL PHP code in multipart filename"; flow:to_server,established; http.method; content:"POST"; http.request_body; content:"filename="; content:"<?php"; nocase; distance:0; sid:2026202; rev:1;)
+
+alert http any any -> any any (msg:"PHP2SHELL serialized object in multipart filename"; flow:to_server,established; http.method; content:"POST"; http.request_body; content:"filename="; content:"|7c 4f 3a|"; distance:0; sid:2026203; rev:1;)
+
+alert http any any -> any any (msg:"PHP2SHELL oversized PHPSESSID cookie"; flow:to_client,established; http.header; content:"Set-Cookie|3a|"; content:"PHPSESSID="; nocase; pcre:"/PHPSESSID=[A-Za-z0-9,-]{200,}/i"; sid:2026210; rev:1;)

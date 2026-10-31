@@ -1,0 +1,18 @@
+services:
+  php:
+    build: .
+    image: php-8.2.35-lab:local
+    container_name: php2shell-lab8235
+    volumes:
+      - ../lab-chain-a/webroot:/var/www/html
+      - ../lab-chain-a/php.ini:/usr/local/etc/php/php.ini
+    ports: ["9001:9000"]
+
+  nginx:
+    image: nginx:alpine
+    container_name: php2shell-nginx8235
+    ports: ["18081:80"]
+    volumes:
+      - ../lab-chain-a/webroot:/var/www/html
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on: [php]

@@ -1,0 +1,22 @@
+php2shell-hunt
+Copyright 2026 Andrei Popa (PaxDynamics)
+
+(a) Source code in this repository is licensed under the Apache License,
+    Version 2.0. See the LICENSE file.
+
+(b) Documentation and reports in docs/ are licensed under the Creative
+    Commons Attribution 4.0 International License (CC BY 4.0):
+    https://creativecommons.org/licenses/by/4.0/
+
+(c) Third-party PHP applications and Composer vendor trees used in the labs
+    (including Drupal, Joomla, WordPress, Roundcube, PHPMailer, Guzzle, and
+    Symfony) are not redistributed by this repository. Each lab's setup.sh
+    downloads those projects, which remain under their own licenses and
+    copyright holders.
+
+(d) Detection rules are provided as-is for defensive use. They are not
+    warranted to detect every variant.
+
+(e) This repository builds on public prior work by 9bie, dinosn, Calif.io
+    (MAD Bugs), ACD421/PHP, B63, googlesky, mnk-works, TheCyberGeek/Qi Deng,
+    and Khashayar Fereidani.

@@ -1,0 +1,161 @@
+# Stock PHP 8.4.26 mod_php (prefork) lab — the configuration the public
+# 9bie / dinosn / devploit chains calibrate against.
+#
+#   php      :18110  display_errors=On, memory_limit=32M, post_max_size=48M
+#                    -> rung-6 PS(id) cookie disclosure + worker pinning
+#   php8m    :18111  display_errors=Off, memory_limit=128M, post_max_size=8M
+#                    -> legacy 1005-part chain + chunked post_max_size bypass
+#
+# No instrumentation, no build step: the stock upstream image. This is the
+# non-instrumented control the repo's rung-5b lab deliberately lacked.
+services:
+  php:
+    image: php:8.4.26-apache
+    container_name: php2shell-pure-modphp
+    ports: ["18110:80"]
+    volumes:
+      - ./webroot:/var/www/html
+      - ./php-leak.ini:/usr/local/etc/php/conf.d/zz-lab.ini:ro
+      - ./apache-limits.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    command: >
+      bash -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && apache2-foreground"
+
+  php8m:
+    image: php:8.4.26-apache
+    container_name: php2shell-pure-modphp-8m
+    ports: ["18111:80"]
+    volumes:
+      - ./webroot:/var/www/html
+      - ./php-8m.ini:/usr/local/etc/php/conf.d/zz-lab.ini:ro
+      - ./apache-limits.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    command: >
+      bash -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && apache2-foreground"
+
+  phpA1:
+    image: php:8.4.26-apache
+    container_name: php2shell-pure-modphp-a1
+    ports: ["18112:80"]
+    volumes:
+      - ./webroot:/var/www/html
+      - ./php-a1.ini:/usr/local/etc/php/conf.d/zz-lab.ini:ro
+      - ./apache-limits.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    command: >
+      bash -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && apache2-foreground"
+
+  # Faithful replica of the 9bie "pure" target: the stock official image with
+  # the untouched php.ini-production and the official 150-worker prefork.
+  # This is the exact build the leak (A1/B1) and fire (A2/B2) stages are
+  # calibrated against — no custom ini, no custom Apache conf.
+  pure:
+    image: php:8.4.26-apache
+    container_name: php2shell-pure-8.4.26
+    ports: ["18120:80"]
+    volumes:
+      - ./webroot:/var/www/html:ro
+      - ./out:/out
+    command: >
+      bash -c "cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini;
+               chown -R www-data:www-data /out 2>/dev/null;
+               chmod -R 777 /out 2>/dev/null;
+               exec apache2-foreground"
+
+  # Negative control: identical official config, but the PATCHED 8.4.27
+  # image. The OOM bailout is gone, so A1 no longer leaves PS(id) dangling
+  # and B1 yields no in-band disclosure -> the chain must die here.
+  purepatched:
+    image: php:8.4.27-apache
+    container_name: php2shell-pure-8.4.27
+    ports: ["18121:80"]
+    volumes:
+      - ./webroot:/var/www/html:ro
+      - ./out:/out
+    command: >
+      bash -c "cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini;
+               chown -R www-data:www-data /out 2>/dev/null;
+               chmod -R 777 /out 2>/dev/null;
+               exec apache2-foreground"
+
+  # Native arm64 (Apple Silicon) — same 9bie ladder, aarch64 offsets.
+  # Requires local tags: docker pull --platform linux/arm64 php:8.4.26-apache
+  #                       docker tag php:8.4.26-apache php:8.4.26-apache-arm64
+  # (and the 8.4.27 equivalent for the patched control).
+  pure-arm64:
+    image: php:8.4.26-apache-arm64
+    platform: linux/arm64
+    container_name: php2shell-pure-arm64
+    ports: ["18130:80"]
+    # lab-assisted address calibration only (the fire itself is plain HTTP)
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    volumes:
+      - ./webroot:/var/www/html:ro
+      - ./out:/out
+      - ./apache-single.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    command: >
+      bash -c "cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini;
+               chown -R www-data:www-data /out 2>/dev/null;
+               chmod -R 777 /out 2>/dev/null;
+               exec apache2-foreground"
+
+  pure-arm64-patched:
+    image: php:8.4.27-apache-arm64
+    platform: linux/arm64
+    container_name: php2shell-pure-arm64-8427
+    ports: ["18131:80"]
+    # lab-assisted address calibration only (the fire itself is plain HTTP)
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    volumes:
+      - ./webroot:/var/www/html:ro
+      - ./out:/out
+      - ./apache-single.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    command: >
+      bash -c "cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini;
+               chown -R www-data:www-data /out 2>/dev/null;
+               chmod -R 777 /out 2>/dev/null;
+               exec apache2-foreground"
+
+  # 8.5.12 — patched build; the var_destroy patch-gap still fires here.
+  pure-arm64-8512:
+    image: php:8.5.12-apache
+    platform: linux/arm64
+    container_name: php2shell-pure-arm64-8512
+    ports: ["18133:80"]
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    volumes:
+      - ./webroot:/var/www/html:ro
+      - ./out:/out
+      - ./apache-single.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    command: >
+      bash -c "cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini;
+               chown -R www-data:www-data /out 2>/dev/null;
+               chmod -R 777 /out 2>/dev/null;
+               exec apache2-foreground"
+
+  pure-arm64-workers:
+    image: php:8.4.26-apache-arm64
+    platform: linux/arm64
+    container_name: php2shell-pure-arm64-workers
+    ports: ["18132:80"]
+    volumes:
+      - ./webroot:/var/www/html:ro
+      - ./out:/out
+    command: >
+      bash -c "cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini;
+               chown -R www-data:www-data /out 2>/dev/null;
+               chmod -R 777 /out 2>/dev/null;
+               exec apache2-foreground"
+
+  # dinosn in-band chain target: stock 8.5.11 with display_errors=On,
+  # 16M/32M, single worker.
+  php8511:
+    image: php:8.5.11-apache
+    container_name: php2shell-pure-8511
+    ports: ["18122:80"]
+    volumes:
+      - ./webroot:/var/www/html:ro
+      - ./php-8511.ini:/usr/local/etc/php/conf.d/zz-lab.ini:ro
+      - ./apache-single.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    command: >
+      bash -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && apache2-foreground"

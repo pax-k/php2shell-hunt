@@ -1,0 +1,16 @@
+{
+  "scope": "deferred PECL backlog; open one row only when the active stock-default RCE chain needs it",
+  "status": "deferred-not-inventoried",
+  "extensions": [
+    {"name": "igbinary", "kind": "pecl", "surface": "serialize/unserialize callbacks", "parser": "C", "status": "deferred-not-inventoried"},
+    {"name": "msgpack", "kind": "pecl", "surface": "serialize/unserialize callbacks", "parser": "C", "status": "deferred-not-inventoried"},
+    {"name": "redis", "kind": "pecl", "surface": "protocol parser, reply parser, session handler", "parser": "C", "status": "deferred-not-inventoried"},
+    {"name": "imagick", "kind": "pecl", "surface": "ImageMagick bindings, blob/read paths", "parser": "C", "status": "deferred-not-inventoried"},
+    {"name": "mongodb", "kind": "pecl", "surface": "BSON parser, wire protocol", "parser": "C", "status": "deferred-not-inventoried"},
+    {"name": "swoole", "kind": "pecl", "surface": "HTTP/WebSocket parser, coroutine scheduler", "parser": "C", "status": "deferred-not-inventoried"},
+    {"name": "grpc", "kind": "pecl", "surface": "HTTP/2 and protobuf bindings", "parser": "C", "status": "deferred-not-inventoried"},
+    {"name": "yaml", "kind": "pecl", "surface": "libyaml parser callbacks", "parser": "C", "status": "deferred-not-inventoried"},
+    {"name": "apcu", "kind": "pecl", "surface": "shared-memory cache, serializer", "parser": "C", "status": "deferred-not-inventoried"},
+    {"name": "xdebug", "kind": "pecl", "surface": "debug protocol, stack/var formatting", "parser": "C", "status": "deferred-not-inventoried"}
+  ]
+}

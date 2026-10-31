@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software or its findings, please cite it as below."
+title: "php2shell-hunt - local-lab PHP vulnerability research"
+type: software
+authors:
+  - family-names: Popa
+    given-names: Andrei
+    affiliation: PaxDynamics
+repository-code: "https://github.com/ikow/php2shell-hunt"
+url: "https://github.com/ikow/php2shell-hunt"
+license: Apache-2.0
+version: 0.1.0
+date-released: "2026-10-31"
+abstract: >-
+  php2shell-hunt is a local-lab research repository for PHP core and
+  application vulnerability research. It uses a verification-first pipeline
+  in which every claim is backed by a loopback lab run and controls, with
+  static analysis serving only as candidate generation. Findings are labelled
+  STOCK, CONFIG-GATED, or LAB-ONLY so readers can distinguish default-build
+  impact from configuration-dependent or lab-only results.
+keywords:
+  - php
+  - vulnerability-research
+  - exploitation
+  - memory-safety
+  - security

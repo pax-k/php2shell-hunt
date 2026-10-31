@@ -1,0 +1,25 @@
+# LAB-ONLY: multi-worker variant of the 115560 lab (action D).
+#
+# 8 prefork children on :18206, container php2shell-115560-8427-workers.
+# Mounts workers.conf (not apache-single.conf) so the pool is not collapsed to
+# a single child. SYS_PTRACE/seccomp=unconfined only for the lab-assisted
+# /proc measure step; fire is plain HTTP.
+#
+#   docker compose -f docker-compose.workers.yml up -d
+services:
+  php8427workers:
+    # Native arm64 tag: the plain php:8.4.27-apache tag was re-pulled as
+    # linux/amd64 for the action-E qemu target, so pin the proven native arch
+    # here (same PHP build as php2shell-115560-8427 on :18200).
+    image: php:8.4.27-apache-arm64
+    platform: linux/arm64
+    container_name: php2shell-115560-8427-workers
+    ports: ["18206:80"]
+    volumes:
+      - ./webroot:/var/www/html
+      - ./php-115560.ini:/usr/local/etc/php/conf.d/zz-115560.ini:ro
+      - ./workers.conf:/etc/apache2/conf-enabled/zz-workers.conf:ro
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    command: >
+      bash -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && apache2-foreground"

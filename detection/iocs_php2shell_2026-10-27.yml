@@ -1,0 +1,133 @@
+# php2shell IOCs — Wiz telemetry, 2026-10-27
+# Source: https://www.wiz.io/blog/php2shell-exploitation-so-far
+# TLP:CLEAR. Correlate with detection/suricata_php2shell_upload_progress.rules.
+#
+# Context: Wiz observed only failed end-to-end attempts. The IPs below are
+# exploitation attempts / scanners / one C2, not confirmed compromises.
+# Absence of a hit is not proof of safety; the request-shape rules matter
+# more than the IP list.
+
+metadata:
+  cves: [CVE-2026-109618, CVE-2026-109619]
+  first_seen: 2026-10-21
+  last_seen: 2026-10-27
+  confidence: medium
+  note: >
+    Wiz: "We have not yet observed successful end-to-end PHP2Shell
+    exploitation in our own telemetry." Karimi's honeypot (single-worker
+    mod_php) is the only public confirmed RCE as of 2026-10-27.
+
+network_iocs:
+  - ip: 85.11.187.35
+    first_seen: 2026-10-21
+    last_seen: 2026-10-21
+    role: exploitation_attempt
+    note: Go port of Chain A; session poisoning + lfi_sink.php (unrelated LFI)
+  - ip: 172.206.2.199
+    first_seen: 2026-10-25
+    last_seen: 2026-10-25
+    role: scanner_and_exploitation_attempt
+  - ip: 3.37.227.134
+    first_seen: 2026-10-21
+    last_seen: 2026-10-21
+    role: exploitation_attempt
+    note: legacy chain, 1,005 parts / 12 MB big field, died at post_max_size
+  - ip: 103.151.172.95
+    first_seen: 2026-10-25
+    last_seen: 2026-10-25
+    role: exploitation_attempt
+    note: legacy chain + stalled-worker occupation (Roundcube attempt)
+  - ip: 178.249.214.6
+    first_seen: 2026-10-24
+    last_seen: 2026-10-24
+    role: exploitation_attempt
+    note: VPN exit; 399 stalled connections + 400 GETs before A1/B1
+  - ip: 31.56.197.72
+    first_seen: 2026-10-21
+    last_seen: 2026-10-21
+    role: c2_payload_server
+  - ip: 135.136.19.197
+    first_seen: 2026-10-26
+    last_seen: 2026-10-26
+    role: scanner_and_exploitation_attempt
+    note: VPN
+  - ip: 15.204.59.70
+    first_seen: 2026-10-24
+    last_seen: 2026-10-24
+    role: exploitation_attempt
+    note: failed here; succeeded against Karimi's single-worker honeypot
+  - ip: 162.35.99.94
+    first_seen: 2026-10-24
+    last_seen: 2026-10-24
+    role: exploitation_attempt
+    note: failed here; succeeded against Karimi's single-worker honeypot
+
+request_shapes:
+  - name: legacy_1005_part
+    description: >
+      1,005-part multipart; 1,001 x p0000="x"; PHPSESSID=NUL;
+      PHP_SESSION_UPLOAD_PROGRESS="pwn"; f=A*64; big=B*12MB.
+    signature: declared body ~12.65 MB, >1,000 parts, null-byte PHPSESSID
+    rule_sid: 210961804
+  - name: a1_chunked_oom
+    description: >
+      Chunked multipart, ~974 parts, PHPSESSID=NUL, 860 empty file parts
+      with depth-64 nested names, 78 x 8,000-byte fields, 4,000-byte
+      progress value. OOMs at the END cleanup.
+    signature: Transfer-Encoding chunked + null-byte PHPSESSID + filename=""
+    rule_sid: 210961805
+  - name: b1_leak
+    description: >
+      Follow-up ~1 s after A1: PHPSESSID=a, progress k0, large padding,
+      then a forged zend_string window; a successful leak returns a
+      PHPSESSID cookie far longer than a normal id.
+    signature: repeated aNNNN[k] array names; response Set-Cookie is huge
+    rule_sid: 210961806
+  - name: worker_occupation
+    description: >
+      N-1 connections with a large declared body, one byte sent, stalled;
+      then the exploit stages. Seen as 399 stalled POSTs beside 400 GETs.
+    signature: burst of incomplete large-body POSTs from one source
+    rule_sid: 210961810
+  - name: branded_session_poison
+    description: >
+      Tools labelled PHP2Shell but unrelated to the CVEs: PHP code in
+      PHP_SESSION_UPLOAD_PROGRESS, then GET /lfi_sink.php?...f=/tmp/sess_<id>.
+    signature: body contains "<?php" + upload-progress; /tmp/sessions/sess_ in URI
+    rule_sid: 210961806, 210961807
+  - name: content_type_comma_bypass
+    description: >
+      "multipart/form-data, boundary=X" (comma separator) is accepted by
+      the PHP parser; Content-Type-anchored WAF rules that require ";"
+      miss it.
+    signature: comma after multipart/form-data in Content-Type
+    rule_sid: 210961809
+
+response_signatures:
+  - name: psid_cookie_disclosure
+    description: >
+      Successful 9bie/dinosn leak: Set-Cookie PHPSESSID is hundreds of KB
+      of URL-encoded heap, not a 22-32 char id.
+    action: alert + preserve the cookie value (it contains live addresses)
+  - name: oom_then_500
+    description: >
+      A1 returns 500 with "Allowed memory size of N bytes exhausted" and
+      the worker survives; the next request may be the leak consumer.
+    action: correlate A1 and B1 on the same worker/pid within seconds
+  - name: proof_file
+    description: >
+      Post-exploitation receipt: a short GET for /p, /pwn.txt,
+      /rce-proof.txt, /oob.txt shortly after the trigger.
+    rule_sid: 210961802
+
+remediation_context:
+  exposure_trend: >
+    Wiz: ~67% fewer distinct internet-exposed vulnerable machines over the
+    first days; affected organizations down ~47.9%; share on PHP <= 7.3
+    fell 8.3% -> 5.7%. Less than 53% of initially affected orgs remained
+    vulnerable one week after disclosure.
+  eol_tail: >
+    PHP 5.4-7.3 have no official fix; Chains A (upload-progress injection
+    + LFI) and C (handler mismatch + gadget) survive the 8.2.35 patch and
+    are the residual risk there.
+  kev: CISA added both CVEs to KEV on 2026-10-26.

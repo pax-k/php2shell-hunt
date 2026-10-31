@@ -1,0 +1,54 @@
+services:
+  db:
+    image: mariadb:10.11
+    container_name: php2shell-wp-zendmm-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wp
+      MYSQL_PASSWORD: wppass
+    volumes:
+      - wp_db:/var/lib/mysql
+
+  php:
+    image: php-wp-zendmm-lab:local
+    build: .
+    container_name: php2shell-wp-zendmm
+    volumes:
+      - ./webroot:/var/www/html
+    depends_on: [db]
+
+  nginx:
+    image: nginx:alpine
+    container_name: php2shell-wp-nginx
+    ports: ["18095:80"]
+    volumes:
+      - ./webroot:/var/www/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on: [php]
+
+  # Patched 8.4.27 FPM — the var_destroy terminal-call proof under WordPress.
+  php-vd-8427:
+    build:
+      context: .
+      dockerfile: Dockerfile.fpm8427
+    image: php-wp-vd-8427:local
+    container_name: php2shell-wp-vd-8427
+    volumes:
+      - ./webroot:/var/www/html
+      - ./out:/out
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    depends_on: [db]
+
+  nginx-vd-8427:
+    image: nginx:alpine
+    container_name: php2shell-wp-vd-nginx
+    ports: ["18096:80"]
+    volumes:
+      - ./webroot:/var/www/html:ro
+      - ./nginx-vd.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on: [php-vd-8427]
+
+volumes:
+  wp_db:

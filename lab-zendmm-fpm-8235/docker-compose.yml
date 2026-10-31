@@ -1,0 +1,37 @@
+# Rung-5b FIXED-VERSION NEGATIVE CONTROL: the same weaponization lab
+# (lab-zendmm-fpm) built from the PATCHED sources (PHP 8.2.35, the
+# 2026-10-21 security release) instead of 8.2.34.
+#
+# Expectation (per the official advisory + ANALYSIS §0.1): the patch
+# removes the OOM longjmp out of partially-initialized contexts and
+# adds complete stale-state resets, so the rung 1-5b ladder must die:
+#   - the producer can no longer leave BG(unserialize) dangling
+#   - the consumer INIT gets a fresh allocation (level=1), no
+#     stale-deref WRAP/RVAL prints
+#   - the forged marker overlays unrelated memory -> chain blocked
+#
+# Run:  (cd lab-zendmm-fpm-8235 && docker compose up -d --build)
+#       python3 poc/verify_109619_rce.py \
+#           --target http://127.0.0.1:18086 \
+#           --container php2shell-zendmm-fpm-8235
+#       -> verdict must be False on all three lines = patch blocks the
+#          chain (the negative control). See ANALYSIS §0.9.2.
+services:
+  php:
+    image: php-zendmm-fpm-8235-lab:local
+    build:
+      context: ../lab-zendmm-fpm
+      args:
+        PHP_VERSION: "8.2.35"
+    container_name: php2shell-zendmm-fpm-8235
+    volumes:
+      - ../lab-chain-a/webroot:/var/www/html
+
+  nginx:
+    image: nginx:alpine
+    container_name: php2shell-zendmm-nginx-8235
+    ports: ["18086:80"]
+    volumes:
+      - ../lab-chain-a/webroot:/var/www/html:ro
+      - ../lab-zendmm-fpm/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on: [php]

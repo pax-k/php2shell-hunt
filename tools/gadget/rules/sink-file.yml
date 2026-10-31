@@ -1,0 +1,17 @@
+id: php-sink-file
+language: php
+severity: warning
+message: file write or include sink
+rule:
+  any:
+    - pattern: file_put_contents($$$)
+    - pattern: fopen($$$)
+    - pattern: fwrite($$$)
+    - pattern: move_uploaded_file($$$)
+    - pattern: copy($$$)
+    - pattern: rename($$$)
+    - pattern: unlink($$$)
+    - pattern: include $X
+    - pattern: include_once $X
+    - pattern: require $X
+    - pattern: require_once $X

@@ -1,0 +1,14 @@
+title: PHP session upload progress field
+id: 2026-php2shell-001
+status: experimental
+description: Detects multipart requests carrying PHP_SESSION_UPLOAD_PROGRESS.
+logsource:
+  category: webserver
+detection:
+  selection:
+    cs-method: POST
+    cs-uri-query|contains: PHP_SESSION_UPLOAD_PROGRESS
+  condition: selection
+falsepositives:
+  - Legitimate upload-progress clients
+level: high

@@ -1,0 +1,21 @@
+{
+  "scope": "deferred bundled-library backlog; open only when the active stock-default chain needs the surface",
+  "status": "deferred-not-inventoried",
+  "libraries": [
+    {"name": "libxml2", "php_surface": "DOM, SimpleXML, XMLReader, XSLT", "status": "deferred-not-inventoried"},
+    {"name": "openssl", "php_surface": "streams, crypto, TLS", "status": "deferred-not-inventoried"},
+    {"name": "icu", "php_surface": "intl, collation, locale", "status": "deferred-not-inventoried"},
+    {"name": "pcre2", "php_surface": "preg_*", "status": "deferred-not-inventoried"},
+    {"name": "libmagic", "php_surface": "fileinfo", "status": "deferred-not-inventoried"},
+    {"name": "zlib", "php_surface": "zlib, gz* streams, phar", "status": "deferred-not-inventoried"},
+    {"name": "libzip", "php_surface": "zip, phar", "status": "deferred-not-inventoried"},
+    {"name": "libsodium", "php_surface": "sodium", "status": "deferred-not-inventoried"},
+    {"name": "sqlite", "php_surface": "PDO_SQLITE, sqlite3", "status": "deferred-not-inventoried"},
+    {"name": "curl", "php_surface": "curl, HTTP/2, URL parsing", "status": "deferred-not-inventoried"},
+    {"name": "ImageMagick", "php_surface": "imagick", "status": "deferred-not-inventoried"},
+    {"name": "gd", "php_surface": "imagecreate*, imagegd*", "status": "deferred-not-inventoried"},
+    {"name": "freetype", "php_surface": "gd font rendering", "status": "deferred-not-inventoried"},
+    {"name": "libjpeg", "php_surface": "gd JPEG decode/encode", "status": "deferred-not-inventoried"},
+    {"name": "libpng", "php_surface": "gd PNG decode/encode", "status": "deferred-not-inventoried"}
+  ]
+}

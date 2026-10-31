@@ -1,0 +1,61 @@
+title: PHP2Shell Webroot Proof-File Write (post-exploitation receipt)
+id: 6a4d1096-2026-6198-b26c-1a2e00000619
+related:
+  - id: CVE-2026-109618
+    type: unknown
+  - id: CVE-2026-109619
+    type: unknown
+status: experimental
+description: >
+  The file-oracle variants of the PHP2Shell chains redirect the executed
+  command's output into a proof file under the webroot and fetch it back
+  over HTTP. The lab POCs use canonical artifact names: `id>/var/www/html/p`
+  (verify_109619_rce.py), `/tmp/rce-proof.txt` (verify_rce_gadget.py), and
+  public full-chain tools use `pwn.txt` / `oob.txt`. A www-data-owned write
+  of such a short, oddly-named file directly in a served webroot is a
+  strong post-exploitation receipt. Baseline normal webroot writes
+  (CMS uploads, compile caches) before alerting.
+references:
+  - https://www.php.net/archive/2026.php#2026-10-21-5
+  - https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w
+  - https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp
+  - https://www.huntress.com/blog/php2shell-leaked-critical-php-vulnerabilities
+author: php2shell research (lab-aligned)
+date: 2026-10-22
+tags:
+  - attack.execution
+  - attack.t1102
+  - cve.2026-109618
+  - cve.2026-109619
+
+logsource:
+  category: file_event
+  product: linux
+
+detection:
+  selection_name:
+    TargetFilename|endswith:
+      - '/p'
+      - '/pwn.txt'
+      - '/rce-proof.txt'
+      - '/oob.txt'
+  selection_webroot:
+    TargetFilename|contains:
+      - '/var/www/'
+      - '/srv/'
+      - '/usr/share/nginx/'
+      - '/home/'
+  condition: selection_name and selection_webroot
+
+# Corroborating signals (not standalone):
+#   - the same short path being FETCHED moments later via HTTP (pair with
+#     the Suricata receipt rule, sid 210961802)
+#   - file owner == the web-server account (www-data / apache) writing
+#     outside its usual upload directories
+#   - a preceding multipart POST carrying PHP_SESSION_UPLOAD_PROGRESS
+#     followed by a PHP "Allowed memory size ... exhausted" fatal
+falsepositives:
+  - CMS plugins or frameworks that legitimately write health-check or
+    cache files at the webroot; tune selection_webroot to the actual
+    document roots and exclude known dirs
+level: medium

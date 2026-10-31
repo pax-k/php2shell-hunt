@@ -1,0 +1,42 @@
+# CVE-2026-109618 in-band lab: 4 prefork workers, shared fork ASLR.
+#
+#   /hi  128M  (leak profile; php.ini-production + 1G post limit)
+#   /lo    8M  (fire profile; per-directory php_admin_value)
+#
+# All workers are forked from the same Apache parent, so they share the
+# libphp and ZendMM chunk mappings; the leak can run on one worker and the
+# fire on a different, fresh 8M worker. The webroot is writable for the
+# HTTP proof (/lo/p).
+services:
+  php:
+    image: php:8.4.26-apache
+    platform: linux/arm64
+    container_name: php2shell-109618-fork
+    ports: ["18152:80"]
+    volumes:
+      - ./webroot:/var/www/html
+      - ./apache-workers.conf:/etc/apache2/conf-enabled/zz-workers.conf:ro
+      - ./zz-lo.conf:/etc/apache2/conf-enabled/zz-lo.conf:ro
+    command: >
+      bash -c "cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini;
+               sed -i 's/^post_max_size = 8M/post_max_size = 1G/' /usr/local/etc/php/php.ini;
+               sed -i 's/^upload_max_filesize = 2M/upload_max_filesize = 1G/' /usr/local/etc/php/php.ini;
+               chown -R www-data:www-data /var/www/html;
+               chmod 1777 /var/www/html/lo;
+               exec apache2-foreground"
+  patched:
+    image: php:8.4.27-apache
+    platform: linux/arm64
+    container_name: php2shell-109618-fork-patched
+    ports: ["18153:80"]
+    volumes:
+      - ./webroot:/var/www/html
+      - ./apache-workers.conf:/etc/apache2/conf-enabled/zz-workers.conf:ro
+      - ./zz-lo.conf:/etc/apache2/conf-enabled/zz-lo.conf:ro
+    command: >
+      bash -c "cp /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini;
+               sed -i 's/^post_max_size = 8M/post_max_size = 1G/' /usr/local/etc/php/php.ini;
+               sed -i 's/^upload_max_filesize = 2M/upload_max_filesize = 1G/' /usr/local/etc/php/php.ini;
+               chown -R www-data:www-data /var/www/html;
+               chmod 1777 /var/www/html/lo;
+               exec apache2-foreground"

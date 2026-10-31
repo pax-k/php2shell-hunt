@@ -1,0 +1,61 @@
+rules:
+  - id: php-magic-reentry
+    languages: [php]
+    severity: ERROR
+    message: magic method re-enters deserialization
+    patterns:
+      - pattern-inside: |
+          function $F(...) { ... }
+      - metavariable-regex:
+          metavariable: $F
+          regex: ^__(destruct|wakeup|unserialize)$
+      - pattern-either:
+          - pattern: unserialize(...)
+          - pattern: igbinary_unserialize(...)
+
+  - id: php-magic-terminal
+    languages: [php]
+    severity: ERROR
+    message: magic method reaches a terminal command sink
+    patterns:
+      - pattern-inside: |
+          function $F(...) { ... }
+      - metavariable-regex:
+          metavariable: $F
+          regex: ^__(destruct|wakeup|unserialize|toString|call|invoke)$
+      - pattern-either:
+          - pattern: system(...)
+          - pattern: exec(...)
+          - pattern: shell_exec(...)
+          - pattern: passthru(...)
+          - pattern: proc_open(...)
+          - pattern: popen(...)
+
+  - id: php-session-handler-switch
+    languages: [php]
+    severity: WARNING
+    message: session serialization handler is switched at runtime
+    patterns:
+      - pattern-either:
+          - pattern: ini_set('session.serialize_handler', ...)
+          - pattern: ini_set("session.serialize_handler", ...)
+
+  - id: php-request-to-terminal
+    languages: [php]
+    mode: taint
+    severity: ERROR
+    message: request data reaches a terminal command sink
+    pattern-sources:
+      - pattern: $_GET
+      - pattern: $_POST
+      - pattern: $_REQUEST
+      - pattern: $_COOKIE
+      - pattern: $_FILES
+      - pattern: $_SERVER
+    pattern-sinks:
+      - pattern: system(...)
+      - pattern: exec(...)
+      - pattern: shell_exec(...)
+      - pattern: passthru(...)
+      - pattern: proc_open(...)
+      - pattern: popen(...)

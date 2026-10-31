@@ -1,0 +1,9 @@
+id: php-sink-unserialize
+language: php
+severity: warning
+message: deserialization re-entry
+rule:
+  any:
+    - pattern: unserialize($$$)
+    - pattern: igbinary_unserialize($$$)
+    - pattern: yaml_parse($$$)

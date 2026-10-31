@@ -1,0 +1,10 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "instructions": [
+    "GOAL.md",
+    "AGENTS.md",
+    "docs/PIPELINE.md",
+    "docs/RCE_PATH.md",
+    "docs/TARGET_SCOPE.md"
+  ]
+}

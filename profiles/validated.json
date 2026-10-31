@@ -1,0 +1,39 @@
+{
+  "profiles": {
+    "php-8.4.10-bookworm-aarch64": {
+      "validated": true,
+      "geometry_calibrated": true,
+      "s_off": 1016728,
+      "main_bucket_count": 87,
+      "validated_by": "poc/verify_matrix.py --rows 8.4.10 (2026-10-29)"
+    },
+    "php-8.4.20-bookworm-aarch64": {
+      "validated": true,
+      "geometry_calibrated": true,
+      "s_off": 1016728,
+      "main_bucket_count": 87,
+      "validated_by": "poc/verify_matrix.py --rows 8.4.20 (2026-10-29)"
+    },
+    "php-8.4.23-bookworm-aarch64": {
+      "validated": true,
+      "geometry_calibrated": true,
+      "s_off": 1016728,
+      "main_bucket_count": 87,
+      "validated_by": "poc/verify_matrix.py --rows 8.4 (2026-10-29)"
+    },
+    "php-8.4.24-bookworm-aarch64": {
+      "validated": true,
+      "geometry_calibrated": true,
+      "s_off": 1016728,
+      "main_bucket_count": 87,
+      "validated_by": "poc/verify_matrix.py --rows 8.4 (2026-10-29)"
+    },
+    "php-8.4.25-bookworm-aarch64": {
+      "validated": true,
+      "geometry_calibrated": true,
+      "s_off": 1016728,
+      "main_bucket_count": 87,
+      "validated_by": "poc/verify_matrix.py --rows 8.4 (2026-10-29)"
+    }
+  }
+}

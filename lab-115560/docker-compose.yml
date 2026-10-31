@@ -1,0 +1,51 @@
+# lab-115560 — CVE-2026-115560 -> var_destroy -> zif_system.
+#
+# The configured serializer is php_serialize; the app switches to "php" at
+# runtime before session_start(). The upload-progress hook writes the session
+# file first. The progress field VALUE carries "|" + the var_destroy payload
+# (binary-safe, length-prefixed key; no filename truncation).
+#
+#   :18200  php:8.4.27-apache  patched for 109618/109619, unpatched 115560
+#   :18201  php:8.5.12-apache  same
+#   :18202  php:8.4.27-apache  upload_progress=Off negative control
+#
+# Single prefork child + MaxConnectionsPerChild=1 for deterministic worker
+# pairing. SYS_PTRACE/seccomp=unconfined only for the lab-assisted measure
+# step; the fire step is plain HTTP and needs neither.
+services:
+  php8427:
+    image: php:8.4.27-apache
+    container_name: php2shell-115560-8427
+    ports: ["18200:80"]
+    volumes:
+      - ./webroot:/var/www/html
+      - ./php-115560.ini:/usr/local/etc/php/conf.d/zz-115560.ini:ro
+      - ./apache-single.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    command: >
+      bash -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && apache2-foreground"
+
+  php8512:
+    image: php:8.5.12-apache
+    container_name: php2shell-115560-8512
+    ports: ["18201:80"]
+    volumes:
+      - ./webroot:/var/www/html
+      - ./php-115560.ini:/usr/local/etc/php/conf.d/zz-115560.ini:ro
+      - ./apache-single.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    command: >
+      bash -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && apache2-foreground"
+
+  php8427noupload:
+    image: php:8.4.27-apache
+    container_name: php2shell-115560-8427-noupload
+    ports: ["18202:80"]
+    volumes:
+      - ./webroot:/var/www/html
+      - ./php-115560-noupload.ini:/usr/local/etc/php/conf.d/zz-115560.ini:ro
+      - ./apache-single.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    command: >
+      bash -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && apache2-foreground"

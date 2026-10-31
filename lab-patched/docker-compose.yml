@@ -1,0 +1,47 @@
+# lab-patched — Chains A/C re-verified on the newest patched releases.
+#
+# The app-level chains (session-file injection + LFI; serialize-handler
+# mismatch + __destruct gadget) don't touch the patched memory-safety code,
+# so they are expected to survive 8.4.27 / 8.5.12 — this lab re-verifies
+# that claim with the official FPM images (native arch, no source build).
+#
+#   :18087  php:8.4.27-fpm
+#   :18088  php:8.5.12-fpm
+#
+# Shares ../lab-chain-a/webroot (the Chain A / Chain C scaffolding) and ../lab-chain-a/php.ini.
+services:
+  php27:
+    image: php:8.4.27-fpm
+    container_name: php2shell-lab8427
+    volumes:
+      - ../lab-chain-a/webroot:/var/www/html
+      - ../lab-chain-a/php.ini:/usr/local/etc/php/php.ini
+    command: >-
+      bash -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && php-fpm"
+
+  nginx27:
+    image: nginx:alpine
+    container_name: php2shell-nginx8427
+    ports: ["18087:80"]
+    volumes:
+      - ../lab-chain-a/webroot:/var/www/html
+      - ./nginx8427.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on: [php27]
+
+  php512:
+    image: php:8.5.12-fpm
+    container_name: php2shell-lab8512
+    volumes:
+      - ../lab-chain-a/webroot:/var/www/html
+      - ../lab-chain-a/php.ini:/usr/local/etc/php/php.ini
+    command: >-
+      bash -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && php-fpm"
+
+  nginx512:
+    image: nginx:alpine
+    container_name: php2shell-nginx8512
+    ports: ["18088:80"]
+    volumes:
+      - ../lab-chain-a/webroot:/var/www/html
+      - ./nginx8512.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on: [php512]

@@ -1,0 +1,60 @@
+# lab-roundcube-redis — LAB-ONLY.
+#
+# Question: with the *server* save handler on Redis (phpredis) and Roundcube's
+# stock session_storage='redis' driver, does the upload-progress record land on
+# the key Roundcube reads? If yes, the plugin's runtime
+# ini_set('session.serialize_handler','php') is no longer needed — Roundcube's
+# own rcube_session_redis::register_session_handler() performs it.
+#
+#   :18320  php:8.4.27-apache + phpredis 6.3.0
+#   :16379  redis:7-alpine (host-side inspection only)
+#
+# Lab target only (127.0.0.1). No gadget class beyond the existing vd115560 lab
+# plugin (fixed benign command `id>/tmp/vd 2>&1`).
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: php2shell-rc-redis-store
+    ports: ["16379:6379"]
+    command: ["redis-server", "--save", "", "--appendonly", "no"]
+
+  web:
+    build: .
+    container_name: php2shell-rc-redis-8427
+    ports: ["18320:80"]
+    depends_on: [redis]
+    volumes:
+      - ../lab-roundcube/roundcubemail-1.6.11:/var/www/html
+      - ./config.inc.php:/var/www/html/config/config.inc.php:ro
+      - ./php-redis.ini:/usr/local/etc/php/conf.d/zz-roundcube-redis.ini:ro
+      - ./apache-single.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+      - ./probe.php:/var/www/html/probe.php:ro
+      - ./prime_redis.php:/var/www/html/prime_redis.php:ro
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    command: >
+      bash -c "mkdir -p /tmp/rc-temp /tmp/rc-logs &&
+      chmod 777 /tmp/rc-temp /tmp/rc-logs &&
+      rm -f /tmp/rc.sqlite /tmp/rc.sqlite-wal /tmp/rc.sqlite-shm /tmp/rc-vd.log &&
+      apache2-foreground"
+
+  webphp:
+    build: .
+    container_name: php2shell-rc-redis-php
+    ports: ["18321:80"]
+    depends_on: [redis]
+    volumes:
+      - ../lab-roundcube/roundcubemail-1.6.11:/var/www/html
+      - ./config-php.inc.php:/var/www/html/config/config.inc.php:ro
+      - ./php-redis.ini:/usr/local/etc/php/conf.d/zz-roundcube-redis.ini:ro
+      - ./apache-single.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+      - ./probe.php:/var/www/html/probe.php:ro
+      - ./prime_redis.php:/var/www/html/prime_redis.php:ro
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    command: >
+      bash -c "mkdir -p /tmp/rc-temp /tmp/rc-logs &&
+      chmod 777 /tmp/rc-temp /tmp/rc-logs &&
+      rm -f /tmp/rc.sqlite /tmp/rc.sqlite-wal /tmp/rc.sqlite-shm /tmp/rc-vd.log &&
+      apache2-foreground"
+

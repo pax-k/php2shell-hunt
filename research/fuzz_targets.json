@@ -1,0 +1,14 @@
+{
+  "scope": "deferred parser fuzzing; open one target only when the active chain needs it",
+  "status": "deferred-not-wired",
+  "targets": [
+    {"name": "php_var_unserialize", "corpus": "serialize", "mode": "coverage-guided", "status": "not-wired"},
+    {"name": "session_decode", "corpus": "session", "mode": "coverage-guided", "status": "not-wired"},
+    {"name": "rfc1867 multipart", "corpus": "multipart", "mode": "coverage-guided", "status": "not-wired"},
+    {"name": "json_decode", "corpus": "json", "mode": "coverage-guided", "status": "not-wired"},
+    {"name": "yaml_parse", "corpus": "yaml", "mode": "coverage-guided", "status": "not-wired"},
+    {"name": "igbinary_unserialize", "corpus": "igbinary", "mode": "coverage-guided", "status": "not-wired"},
+    {"name": "msgpack_unpack", "corpus": "msgpack", "mode": "coverage-guided", "status": "not-wired"},
+    {"name": "redis reply parser", "corpus": "redis", "mode": "coverage-guided", "status": "not-wired"}
+  ]
+}

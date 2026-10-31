@@ -1,0 +1,72 @@
+# lab-115560 cleanup=On race profile.
+#
+#   :18204  php:8.4.27-apache   race    (container php2shell-115560-8427-race)
+#   :18205  php:8.5.12-apache   race    (container php2shell-115560-8512-race)
+#   :18208  php:8.4.27-apache   cleanup=Off diagnostic (…-8427-offdiag)
+#   :18209  php:8.5.12-apache   cleanup=Off diagnostic (…-8512-offdiag)
+#
+# Uses its own project name / ports / config so the cleanup=Off services on
+# :18200/:18201 are untouched. Multi-child prefork (apache-race.conf) so the
+# streaming upload and the concurrent consumer run in parallel.
+#
+# platform: linux/arm64 is explicit: without it Docker may pick the amd64
+# variant under emulation, whose maps/offsets are completely different.
+services:
+  php8427race:
+    platform: linux/arm64
+    image: php:8.4.27-apache
+    container_name: php2shell-115560-8427-race
+    ports: ["18204:80"]
+    volumes:
+      - ./webroot:/var/www/html
+      - ./php-115560-race.ini:/usr/local/etc/php/conf.d/zz-115560.ini:ro
+      - ./apache-race.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    command: >
+      bash -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && apache2-foreground"
+
+  php8512race:
+    platform: linux/arm64
+    image: php:8.5.12-apache
+    container_name: php2shell-115560-8512-race
+    ports: ["18205:80"]
+    volumes:
+      - ./webroot:/var/www/html
+      - ./php-115560-race.ini:/usr/local/etc/php/conf.d/zz-115560.ini:ro
+      - ./apache-race.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    command: >
+      bash -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && apache2-foreground"
+
+  # cleanup=Off diagnostic twin for the race project only (does not touch
+  # :18200/:18201): lets us compare the dtor inv sequence with the direct
+  # proof while keeping the same multi-child pool.
+  php8427off:
+    platform: linux/arm64
+    image: php:8.4.27-apache
+    container_name: php2shell-115560-8427-offdiag
+    ports: ["18208:80"]
+    volumes:
+      - ./webroot:/var/www/html
+      - ./php-115560.ini:/usr/local/etc/php/conf.d/zz-115560.ini:ro
+      - ./apache-race.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    command: >
+      bash -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && apache2-foreground"
+
+  php8512off:
+    platform: linux/arm64
+    image: php:8.5.12-apache
+    container_name: php2shell-115560-8512-offdiag
+    ports: ["18209:80"]
+    volumes:
+      - ./webroot:/var/www/html
+      - ./php-115560.ini:/usr/local/etc/php/conf.d/zz-115560.ini:ro
+      - ./apache-race.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    command: >
+      bash -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && apache2-foreground"

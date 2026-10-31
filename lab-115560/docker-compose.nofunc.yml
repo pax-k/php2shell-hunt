@@ -1,0 +1,25 @@
+# lab-115560 action C — disable_functions-hardened target.
+#
+# Same 8.4.27 image and single-prefork-child config as the main lab, but the
+# ini disables system/exec/shell_exec/passthru/popen/proc_open/pcntl_exec.
+# The public simple-gadget 115560 path (zif_system looked up by name through
+# the function table, where disable_functions installs a stub) is therefore
+# blocked; the forged zif_system call goes directly to the C function and must
+# still run the fixed benign command.
+#
+#   :18203  php:8.4.27-apache  disable_functions hardened
+#
+# SYS_PTRACE/seccomp=unconfined are only for the /proc measure step.
+services:
+  php8427nofunc:
+    image: php:8.4.27-apache
+    container_name: php2shell-115560-8427-nofunc
+    ports: ["18203:80"]
+    volumes:
+      - ./webroot:/var/www/html:ro
+      - ./php-115560-nofunc.ini:/usr/local/etc/php/conf.d/zz-115560.ini:ro
+      - ./apache-single.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    command: >
+      bash -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && apache2-foreground"

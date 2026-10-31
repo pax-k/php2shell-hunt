@@ -1,0 +1,14 @@
+{
+  "scope": "deferred platform matrix; added only after a stock-default terminal call exists",
+  "status": "deferred-not-tested",
+  "rows": [
+    {"axis": "thread-safety", "values": ["ZTS", "NTS"], "status": "not-tested"},
+    {"axis": "arch", "values": ["aarch64", "x86-64", "32-bit"], "status": "not-tested"},
+    {"axis": "endianness", "values": ["little", "big"], "status": "not-tested"},
+    {"axis": "libc", "values": ["glibc", "musl"], "status": "not-tested"},
+    {"axis": "os", "values": ["linux", "macos", "windows"], "status": "not-tested"},
+    {"axis": "build", "values": ["debug", "release"], "status": "not-tested"},
+    {"axis": "jit", "values": ["on", "off"], "status": "not-tested"},
+    {"axis": "allocator", "values": ["stock-zendmm", "asan"], "status": "not-tested"}
+  ]
+}

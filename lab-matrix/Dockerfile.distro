@@ -1,0 +1,20 @@
+# G7 — a real distro-package model: Ubuntu 24.04's `libapache2-mod-php`.
+#
+# Deliberately not an upstream source build: this is the package an
+# administrator actually gets from `apt install`. Its version, offsets and heap
+# geometry differ from `php:8.4.26-apache`; it exists to prove the trigger /
+# delivery / precondition layer under packager defaults, not to fire the core
+# chain (that needs a per-build calibration row first).
+FROM ubuntu:24.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        apache2 libapache2-mod-php ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY webroot/ /var/www/html/
+
+EXPOSE 80
+CMD ["apache2ctl", "-D", "FOREGROUND"]

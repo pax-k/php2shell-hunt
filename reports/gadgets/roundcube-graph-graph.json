@@ -1,0 +1,3594 @@
+{
+  "classes": 583,
+  "entries": 22,
+  "facts_errors": 0,
+  "files": 582,
+  "methods": 4749,
+  "paths": [
+    {
+      "depth": 0,
+      "entry": {
+        "class": "CachePurge",
+        "file": "plugins/vd115560/vd115560.php",
+        "line": 73,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "CachePurge",
+          "edge": "entry",
+          "file": "plugins/vd115560/vd115560.php",
+          "line": 73,
+          "method": "__destruct"
+        }
+      ],
+      "score": 100,
+      "sink": {
+        "file": "plugins/vd115560/vd115560.php",
+        "kind": "reentry",
+        "line": 108,
+        "name": "unserialize"
+      }
+    },
+    {
+      "depth": 1,
+      "entry": {
+        "class": "DASPRiD\\Enum\\EnumMap",
+        "file": "vendor/dasprid/enum/src/EnumMap.php",
+        "line": 111,
+        "method": "__unserialize"
+      },
+      "path": [
+        {
+          "class": "DASPRiD\\Enum\\EnumMap",
+          "edge": "entry",
+          "file": "vendor/dasprid/enum/src/EnumMap.php",
+          "line": 111,
+          "method": "__unserialize"
+        },
+        {
+          "class": "DASPRiD\\Enum\\EnumMap",
+          "edge": "method unserialize",
+          "file": "vendor/dasprid/enum/src/EnumMap.php",
+          "line": 292,
+          "method": "unserialize"
+        }
+      ],
+      "score": 97,
+      "sink": {
+        "file": "vendor/dasprid/enum/src/EnumMap.php",
+        "kind": "reentry",
+        "line": 294,
+        "name": "unserialize"
+      }
+    },
+    {
+      "depth": 0,
+      "entry": {
+        "class": "VdSimple",
+        "file": "plugins/vd115560/vd115560.php",
+        "line": 51,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "VdSimple",
+          "edge": "entry",
+          "file": "plugins/vd115560/vd115560.php",
+          "line": 51,
+          "method": "__destruct"
+        }
+      ],
+      "score": 90,
+      "sink": {
+        "file": "plugins/vd115560/vd115560.php",
+        "kind": "terminal",
+        "line": 54,
+        "name": "exec"
+      }
+    },
+    {
+      "depth": 1,
+      "entry": {
+        "class": "Crypt_GPG_Engine",
+        "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+        "line": 653,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Crypt_GPG_Engine",
+          "edge": "entry",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+          "line": 653,
+          "method": "__destruct"
+        },
+        {
+          "class": "Crypt_GPG_Engine",
+          "edge": "method _closeIdleAgents",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+          "line": 1832,
+          "method": "_closeIdleAgents"
+        }
+      ],
+      "score": 87,
+      "sink": {
+        "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+        "kind": "terminal",
+        "line": 1840,
+        "name": "proc_open"
+      }
+    },
+    {
+      "depth": 2,
+      "entry": {
+        "class": "Crypt_GPG_Engine",
+        "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+        "line": 653,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Crypt_GPG_Engine",
+          "edge": "entry",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+          "line": 653,
+          "method": "__destruct"
+        },
+        {
+          "class": "Crypt_GPG_Engine",
+          "edge": "method _closeSubprocess",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+          "line": 1702,
+          "method": "_closeSubprocess"
+        },
+        {
+          "class": "Crypt_GPG_ProcessControl",
+          "edge": "method terminate",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/ProcessControl.php",
+          "line": 118,
+          "method": "terminate"
+        }
+      ],
+      "score": 84,
+      "sink": {
+        "file": "vendor/pear/crypt_gpg/Crypt/GPG/ProcessControl.php",
+        "kind": "terminal",
+        "line": 123,
+        "name": "exec"
+      }
+    },
+    {
+      "depth": 2,
+      "entry": {
+        "class": "Crypt_GPG_Engine",
+        "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+        "line": 653,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Crypt_GPG_Engine",
+          "edge": "entry",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+          "line": 653,
+          "method": "__destruct"
+        },
+        {
+          "class": "Crypt_GPG_Engine",
+          "edge": "method _closeSubprocess",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+          "line": 1702,
+          "method": "_closeSubprocess"
+        },
+        {
+          "class": "Crypt_GPG_ProcessControl",
+          "edge": "method terminate",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/ProcessControl.php",
+          "line": 118,
+          "method": "terminate"
+        }
+      ],
+      "score": 84,
+      "sink": {
+        "file": "vendor/pear/crypt_gpg/Crypt/GPG/ProcessControl.php",
+        "kind": "terminal",
+        "line": 125,
+        "name": "exec"
+      }
+    },
+    {
+      "depth": 2,
+      "entry": {
+        "class": "Crypt_GPG_Engine",
+        "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+        "line": 653,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Crypt_GPG_Engine",
+          "edge": "entry",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+          "line": 653,
+          "method": "__destruct"
+        },
+        {
+          "class": "Crypt_GPG_Engine",
+          "edge": "method _closeSubprocess",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+          "line": 1702,
+          "method": "_closeSubprocess"
+        },
+        {
+          "class": "Crypt_GPG_ProcessControl",
+          "edge": "method isRunning",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/ProcessControl.php",
+          "line": 84,
+          "method": "isRunning"
+        }
+      ],
+      "score": 84,
+      "sink": {
+        "file": "vendor/pear/crypt_gpg/Crypt/GPG/ProcessControl.php",
+        "kind": "terminal",
+        "line": 94,
+        "name": "exec"
+      }
+    },
+    {
+      "depth": 2,
+      "entry": {
+        "class": "Crypt_GPG_Engine",
+        "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+        "line": 653,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Crypt_GPG_Engine",
+          "edge": "entry",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+          "line": 653,
+          "method": "__destruct"
+        },
+        {
+          "class": "Crypt_GPG_Engine",
+          "edge": "method _closeSubprocess",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+          "line": 1702,
+          "method": "_closeSubprocess"
+        },
+        {
+          "class": "Crypt_GPG_ProcessControl",
+          "edge": "method isRunning",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/ProcessControl.php",
+          "line": 84,
+          "method": "isRunning"
+        }
+      ],
+      "score": 84,
+      "sink": {
+        "file": "vendor/pear/crypt_gpg/Crypt/GPG/ProcessControl.php",
+        "kind": "terminal",
+        "line": 98,
+        "name": "exec"
+      }
+    },
+    {
+      "depth": 2,
+      "entry": {
+        "class": "Crypt_GPG_Engine",
+        "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+        "line": 653,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Crypt_GPG_Engine",
+          "edge": "entry",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+          "line": 653,
+          "method": "__destruct"
+        },
+        {
+          "class": "Crypt_GPG_Engine",
+          "edge": "method _closeSubprocess",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+          "line": 1702,
+          "method": "_closeSubprocess"
+        },
+        {
+          "class": "Crypt_GPG_Engine",
+          "edge": "method _debug",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+          "line": 1961,
+          "method": "_debug"
+        }
+      ],
+      "score": 64,
+      "sink": {
+        "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+        "kind": "dispatch",
+        "line": 1965,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Crypt_GPG_Engine",
+        "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+        "line": 653,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Crypt_GPG_Engine",
+          "edge": "entry",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+          "line": 653,
+          "method": "__destruct"
+        },
+        {
+          "class": "Crypt_GPG_Engine",
+          "edge": "method _closeSubprocess",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+          "line": 1702,
+          "method": "_closeSubprocess"
+        },
+        {
+          "class": "Crypt_GPG_Engine",
+          "edge": "method _closeAgentLaunchProcess",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+          "line": 1782,
+          "method": "_closeAgentLaunchProcess"
+        },
+        {
+          "class": "Crypt_GPG_Engine",
+          "edge": "method _debug",
+          "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+          "line": 1961,
+          "method": "_debug"
+        }
+      ],
+      "score": 61,
+      "sink": {
+        "file": "vendor/pear/crypt_gpg/Crypt/GPG/Engine.php",
+        "kind": "dispatch",
+        "line": 1965,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 61,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 4,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 58,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 4,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Socket",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_socket/Net/Socket.php",
+          "line": 188,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Socket",
+          "defining": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 58,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 5,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _sendCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1201,
+          "method": "_sendCmd"
+        },
+        {
+          "class": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 55,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 5,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _sendCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1201,
+          "method": "_sendCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _debug",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1536,
+          "method": "_debug"
+        }
+      ],
+      "score": 55,
+      "sink": {
+        "file": "vendor/pear/net_sieve/Sieve.php",
+        "kind": "dispatch",
+        "line": 1540,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 5,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _recvLn",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1233,
+          "method": "_recvLn"
+        },
+        {
+          "class": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 55,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 5,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _recvLn",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1233,
+          "method": "_recvLn"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _debug",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1536,
+          "method": "_debug"
+        }
+      ],
+      "score": 55,
+      "sink": {
+        "file": "vendor/pear/net_sieve/Sieve.php",
+        "kind": "dispatch",
+        "line": 1540,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 5,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _recvBytes",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1259,
+          "method": "_recvBytes"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _debug",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1536,
+          "method": "_debug"
+        }
+      ],
+      "score": 55,
+      "sink": {
+        "file": "vendor/pear/net_sieve/Sieve.php",
+        "kind": "dispatch",
+        "line": 1540,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 6,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _sendCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1201,
+          "method": "_sendCmd"
+        },
+        {
+          "class": "Net_Socket",
+          "edge": "method getStatus",
+          "file": "vendor/pear/net_socket/Net/Socket.php",
+          "line": 313,
+          "method": "getStatus"
+        },
+        {
+          "class": "Net_Socket",
+          "defining": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 52,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 6,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _recvLn",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1233,
+          "method": "_recvLn"
+        },
+        {
+          "class": "Net_Socket",
+          "edge": "method gets",
+          "file": "vendor/pear/net_socket/Net/Socket.php",
+          "line": 334,
+          "method": "gets"
+        },
+        {
+          "class": "Net_Socket",
+          "defining": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 52,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 6,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _recvBytes",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1259,
+          "method": "_recvBytes"
+        },
+        {
+          "class": "Net_Socket",
+          "edge": "method read",
+          "file": "vendor/pear/net_socket/Net/Socket.php",
+          "line": 359,
+          "method": "read"
+        },
+        {
+          "class": "Net_Socket",
+          "defining": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 52,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 6,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method connect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 367,
+          "method": "connect"
+        },
+        {
+          "class": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 52,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 6,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method login",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 450,
+          "method": "login"
+        },
+        {
+          "class": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 52,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 0,
+      "entry": {
+        "class": "CachePurge",
+        "file": "plugins/vd115560/vd115560.php",
+        "line": 73,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "CachePurge",
+          "edge": "entry",
+          "file": "plugins/vd115560/vd115560.php",
+          "line": 73,
+          "method": "__destruct"
+        }
+      ],
+      "score": 50,
+      "sink": {
+        "file": "plugins/vd115560/vd115560.php",
+        "kind": "file",
+        "line": 84,
+        "name": "file_put_contents"
+      }
+    },
+    {
+      "depth": 0,
+      "entry": {
+        "class": "CachePurge",
+        "file": "plugins/vd115560/vd115560.php",
+        "line": 73,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "CachePurge",
+          "edge": "entry",
+          "file": "plugins/vd115560/vd115560.php",
+          "line": 73,
+          "method": "__destruct"
+        }
+      ],
+      "score": 50,
+      "sink": {
+        "file": "plugins/vd115560/vd115560.php",
+        "kind": "file",
+        "line": 90,
+        "name": "file_put_contents"
+      }
+    },
+    {
+      "depth": 0,
+      "entry": {
+        "class": "CachePurge",
+        "file": "plugins/vd115560/vd115560.php",
+        "line": 73,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "CachePurge",
+          "edge": "entry",
+          "file": "plugins/vd115560/vd115560.php",
+          "line": 73,
+          "method": "__destruct"
+        }
+      ],
+      "score": 50,
+      "sink": {
+        "file": "plugins/vd115560/vd115560.php",
+        "kind": "file",
+        "line": 97,
+        "name": "file_put_contents"
+      }
+    },
+    {
+      "depth": 0,
+      "entry": {
+        "class": "rcmail_attachment_handler",
+        "file": "program/include/rcmail_attachment_handler.php",
+        "line": 123,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcmail_attachment_handler",
+          "edge": "entry",
+          "file": "program/include/rcmail_attachment_handler.php",
+          "line": 123,
+          "method": "__destruct"
+        }
+      ],
+      "score": 50,
+      "sink": {
+        "file": "program/include/rcmail_attachment_handler.php",
+        "kind": "file",
+        "line": 126,
+        "name": "unlink"
+      }
+    },
+    {
+      "depth": 0,
+      "entry": {
+        "class": "rcmail_sendmail",
+        "file": "program/include/rcmail_sendmail.php",
+        "line": 82,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcmail_sendmail",
+          "edge": "entry",
+          "file": "program/include/rcmail_sendmail.php",
+          "line": 82,
+          "method": "__destruct"
+        }
+      ],
+      "score": 50,
+      "sink": {
+        "file": "program/include/rcmail_sendmail.php",
+        "kind": "file",
+        "line": 85,
+        "name": "unlink"
+      }
+    },
+    {
+      "depth": 7,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method connect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 367,
+          "method": "connect"
+        },
+        {
+          "class": "Net_Socket",
+          "edge": "method connect",
+          "file": "vendor/pear/net_socket/Net/Socket.php",
+          "line": 114,
+          "method": "connect"
+        },
+        {
+          "class": "Net_Socket",
+          "defining": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 49,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 7,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method connect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 367,
+          "method": "connect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdCapability",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1138,
+          "method": "_cmdCapability"
+        },
+        {
+          "class": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 49,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 7,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method connect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 367,
+          "method": "connect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _startTLS",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1428,
+          "method": "_startTLS"
+        },
+        {
+          "class": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 49,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 7,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method connect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 367,
+          "method": "connect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _startTLS",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1428,
+          "method": "_startTLS"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _debug",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1536,
+          "method": "_debug"
+        }
+      ],
+      "score": 49,
+      "sink": {
+        "file": "vendor/pear/net_sieve/Sieve.php",
+        "kind": "dispatch",
+        "line": 1540,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 7,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method login",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 450,
+          "method": "login"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdAuthenticate",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 679,
+          "method": "_cmdAuthenticate"
+        },
+        {
+          "class": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 49,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 1,
+      "entry": {
+        "class": "GuzzleHttp\\Cookie\\FileCookieJar",
+        "file": "vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php",
+        "line": 45,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "GuzzleHttp\\Cookie\\FileCookieJar",
+          "edge": "entry",
+          "file": "vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php",
+          "line": 45,
+          "method": "__destruct"
+        },
+        {
+          "class": "GuzzleHttp\\Cookie\\FileCookieJar",
+          "edge": "method save",
+          "file": "vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php",
+          "line": 57,
+          "method": "save"
+        }
+      ],
+      "score": 47,
+      "sink": {
+        "file": "vendor/guzzlehttp/guzzle/src/Cookie/FileCookieJar.php",
+        "kind": "file",
+        "line": 68,
+        "name": "file_put_contents"
+      }
+    },
+    {
+      "depth": 8,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method connect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 367,
+          "method": "connect"
+        },
+        {
+          "class": "Net_Socket",
+          "edge": "method connect",
+          "file": "vendor/pear/net_socket/Net/Socket.php",
+          "line": 114,
+          "method": "connect"
+        },
+        {
+          "class": "Net_Socket",
+          "edge": "method setTimeout",
+          "file": "vendor/pear/net_socket/Net/Socket.php",
+          "line": 255,
+          "method": "setTimeout"
+        },
+        {
+          "class": "Net_Socket",
+          "defining": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 46,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 8,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method connect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 367,
+          "method": "connect"
+        },
+        {
+          "class": "Net_Socket",
+          "edge": "method connect",
+          "file": "vendor/pear/net_socket/Net/Socket.php",
+          "line": 114,
+          "method": "connect"
+        },
+        {
+          "class": "Net_Socket",
+          "edge": "method setBlocking",
+          "file": "vendor/pear/net_socket/Net/Socket.php",
+          "line": 233,
+          "method": "setBlocking"
+        },
+        {
+          "class": "Net_Socket",
+          "defining": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 46,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 8,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method connect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 367,
+          "method": "connect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _startTLS",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1428,
+          "method": "_startTLS"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdCapability",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1138,
+          "method": "_cmdCapability"
+        },
+        {
+          "class": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 46,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 8,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method login",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 450,
+          "method": "login"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdAuthenticate",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 679,
+          "method": "_cmdAuthenticate"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _getBestAuthMethod",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1383,
+          "method": "_getBestAuthMethod"
+        },
+        {
+          "class": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 46,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 8,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method login",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 450,
+          "method": "login"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdAuthenticate",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 679,
+          "method": "_cmdAuthenticate"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _authGSSAPI",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 759,
+          "method": "_authGSSAPI"
+        },
+        {
+          "class": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 46,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 8,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method login",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 450,
+          "method": "login"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdAuthenticate",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 679,
+          "method": "_cmdAuthenticate"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdCapability",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1138,
+          "method": "_cmdCapability"
+        },
+        {
+          "class": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 46,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 2,
+      "entry": {
+        "class": "debug_logger",
+        "file": "plugins/debug_logger/debug_logger.php",
+        "line": 153,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "debug_logger",
+          "edge": "entry",
+          "file": "plugins/debug_logger/debug_logger.php",
+          "line": 153,
+          "method": "__destruct"
+        },
+        {
+          "class": "runlog",
+          "edge": "method end",
+          "file": "plugins/debug_logger/runlog/runlog.php",
+          "line": 47,
+          "method": "end"
+        },
+        {
+          "class": "runlog",
+          "edge": "method print_to_file",
+          "file": "plugins/debug_logger/runlog/runlog.php",
+          "line": 143,
+          "method": "print_to_file"
+        }
+      ],
+      "score": 44,
+      "sink": {
+        "file": "plugins/debug_logger/runlog/runlog.php",
+        "kind": "file",
+        "line": 153,
+        "name": "fwrite"
+      }
+    },
+    {
+      "depth": 2,
+      "entry": {
+        "class": "debug_logger",
+        "file": "plugins/debug_logger/debug_logger.php",
+        "line": 153,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "debug_logger",
+          "edge": "entry",
+          "file": "plugins/debug_logger/debug_logger.php",
+          "line": 153,
+          "method": "__destruct"
+        },
+        {
+          "class": "runlog",
+          "edge": "method end",
+          "file": "plugins/debug_logger/runlog/runlog.php",
+          "line": 47,
+          "method": "end"
+        },
+        {
+          "class": "runlog",
+          "edge": "method print_to_file",
+          "file": "plugins/debug_logger/runlog/runlog.php",
+          "line": 143,
+          "method": "print_to_file"
+        }
+      ],
+      "score": 44,
+      "sink": {
+        "file": "plugins/debug_logger/runlog/runlog.php",
+        "kind": "file",
+        "line": 169,
+        "name": "fwrite"
+      }
+    },
+    {
+      "depth": 9,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method login",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 450,
+          "method": "login"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdAuthenticate",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 679,
+          "method": "_cmdAuthenticate"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _authLOGIN",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 819,
+          "method": "_authLOGIN"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _sendCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1201,
+          "method": "_sendCmd"
+        },
+        {
+          "class": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 43,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 9,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method login",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 450,
+          "method": "login"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdAuthenticate",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 679,
+          "method": "_cmdAuthenticate"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _authLOGIN",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 819,
+          "method": "_authLOGIN"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _sendCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1201,
+          "method": "_sendCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _debug",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1536,
+          "method": "_debug"
+        }
+      ],
+      "score": 43,
+      "sink": {
+        "file": "vendor/pear/net_sieve/Sieve.php",
+        "kind": "dispatch",
+        "line": 1540,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 9,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method login",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 450,
+          "method": "login"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdAuthenticate",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 679,
+          "method": "_cmdAuthenticate"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _authPLAIN",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 740,
+          "method": "_authPLAIN"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _sendCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1201,
+          "method": "_sendCmd"
+        },
+        {
+          "class": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 43,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 9,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method login",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 450,
+          "method": "login"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdAuthenticate",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 679,
+          "method": "_cmdAuthenticate"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _authPLAIN",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 740,
+          "method": "_authPLAIN"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _sendCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1201,
+          "method": "_sendCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _debug",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1536,
+          "method": "_debug"
+        }
+      ],
+      "score": 43,
+      "sink": {
+        "file": "vendor/pear/net_sieve/Sieve.php",
+        "kind": "dispatch",
+        "line": 1540,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 9,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method login",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 450,
+          "method": "login"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdAuthenticate",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 679,
+          "method": "_cmdAuthenticate"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _authEXTERNAL",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 923,
+          "method": "_authEXTERNAL"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _sendCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1201,
+          "method": "_sendCmd"
+        },
+        {
+          "class": "PEAR",
+          "edge": "raiseError -> __call",
+          "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+          "line": 216,
+          "method": "__call"
+        }
+      ],
+      "score": 43,
+      "sink": {
+        "file": "vendor/pear/pear-core-minimal/src/PEAR.php",
+        "kind": "dispatch",
+        "line": 223,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 9,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method login",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 450,
+          "method": "login"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdAuthenticate",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 679,
+          "method": "_cmdAuthenticate"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _authEXTERNAL",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 923,
+          "method": "_authEXTERNAL"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _sendCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1201,
+          "method": "_sendCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _debug",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1536,
+          "method": "_debug"
+        }
+      ],
+      "score": 43,
+      "sink": {
+        "file": "vendor/pear/net_sieve/Sieve.php",
+        "kind": "dispatch",
+        "line": 1540,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 5,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _sendCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1201,
+          "method": "_sendCmd"
+        },
+        {
+          "class": "Net_Socket",
+          "edge": "method write",
+          "file": "vendor/pear/net_socket/Net/Socket.php",
+          "line": 382,
+          "method": "write"
+        }
+      ],
+      "score": 35,
+      "sink": {
+        "file": "vendor/pear/net_socket/Net/Socket.php",
+        "kind": "file",
+        "line": 389,
+        "name": "fwrite"
+      }
+    },
+    {
+      "depth": 5,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _sendCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1201,
+          "method": "_sendCmd"
+        },
+        {
+          "class": "Net_Socket",
+          "edge": "method write",
+          "file": "vendor/pear/net_socket/Net/Socket.php",
+          "line": 382,
+          "method": "write"
+        }
+      ],
+      "score": 35,
+      "sink": {
+        "file": "vendor/pear/net_socket/Net/Socket.php",
+        "kind": "file",
+        "line": 413,
+        "name": "fwrite"
+      }
+    },
+    {
+      "depth": 8,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method login",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 450,
+          "method": "login"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdAuthenticate",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 679,
+          "method": "_cmdAuthenticate"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _authDigestMD5",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 871,
+          "method": "_authDigestMD5"
+        },
+        {
+          "class": "Auth_SASL",
+          "edge": "method factory",
+          "file": "vendor/pear/auth_sasl/Auth/SASL.php",
+          "line": 61,
+          "method": "factory"
+        }
+      ],
+      "score": 26,
+      "sink": {
+        "file": "vendor/pear/auth_sasl/Auth/SASL.php",
+        "kind": "file",
+        "line": 116,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 8,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method login",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 450,
+          "method": "login"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdAuthenticate",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 679,
+          "method": "_cmdAuthenticate"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _authCRAMMD5",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 843,
+          "method": "_authCRAMMD5"
+        },
+        {
+          "class": "Auth_SASL",
+          "edge": "method factory",
+          "file": "vendor/pear/auth_sasl/Auth/SASL.php",
+          "line": 61,
+          "method": "factory"
+        }
+      ],
+      "score": 26,
+      "sink": {
+        "file": "vendor/pear/auth_sasl/Auth/SASL.php",
+        "kind": "file",
+        "line": 116,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 9,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method login",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 450,
+          "method": "login"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdAuthenticate",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 679,
+          "method": "_cmdAuthenticate"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _authLOGIN",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 819,
+          "method": "_authLOGIN"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _sendCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1201,
+          "method": "_sendCmd"
+        },
+        {
+          "class": "Net_Socket",
+          "edge": "method write",
+          "file": "vendor/pear/net_socket/Net/Socket.php",
+          "line": 382,
+          "method": "write"
+        }
+      ],
+      "score": 23,
+      "sink": {
+        "file": "vendor/pear/net_socket/Net/Socket.php",
+        "kind": "file",
+        "line": 389,
+        "name": "fwrite"
+      }
+    },
+    {
+      "depth": 9,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method login",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 450,
+          "method": "login"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdAuthenticate",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 679,
+          "method": "_cmdAuthenticate"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _authLOGIN",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 819,
+          "method": "_authLOGIN"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _sendCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1201,
+          "method": "_sendCmd"
+        },
+        {
+          "class": "Net_Socket",
+          "edge": "method write",
+          "file": "vendor/pear/net_socket/Net/Socket.php",
+          "line": 382,
+          "method": "write"
+        }
+      ],
+      "score": 23,
+      "sink": {
+        "file": "vendor/pear/net_socket/Net/Socket.php",
+        "kind": "file",
+        "line": 413,
+        "name": "fwrite"
+      }
+    },
+    {
+      "depth": 9,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method login",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 450,
+          "method": "login"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdAuthenticate",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 679,
+          "method": "_cmdAuthenticate"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _authPLAIN",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 740,
+          "method": "_authPLAIN"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _sendCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1201,
+          "method": "_sendCmd"
+        },
+        {
+          "class": "Net_Socket",
+          "edge": "method write",
+          "file": "vendor/pear/net_socket/Net/Socket.php",
+          "line": 382,
+          "method": "write"
+        }
+      ],
+      "score": 23,
+      "sink": {
+        "file": "vendor/pear/net_socket/Net/Socket.php",
+        "kind": "file",
+        "line": 389,
+        "name": "fwrite"
+      }
+    },
+    {
+      "depth": 9,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method login",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 450,
+          "method": "login"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdAuthenticate",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 679,
+          "method": "_cmdAuthenticate"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _authPLAIN",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 740,
+          "method": "_authPLAIN"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _sendCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1201,
+          "method": "_sendCmd"
+        },
+        {
+          "class": "Net_Socket",
+          "edge": "method write",
+          "file": "vendor/pear/net_socket/Net/Socket.php",
+          "line": 382,
+          "method": "write"
+        }
+      ],
+      "score": 23,
+      "sink": {
+        "file": "vendor/pear/net_socket/Net/Socket.php",
+        "kind": "file",
+        "line": 413,
+        "name": "fwrite"
+      }
+    },
+    {
+      "depth": 9,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method login",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 450,
+          "method": "login"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdAuthenticate",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 679,
+          "method": "_cmdAuthenticate"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _authEXTERNAL",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 923,
+          "method": "_authEXTERNAL"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _sendCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1201,
+          "method": "_sendCmd"
+        },
+        {
+          "class": "Net_Socket",
+          "edge": "method write",
+          "file": "vendor/pear/net_socket/Net/Socket.php",
+          "line": 382,
+          "method": "write"
+        }
+      ],
+      "score": 23,
+      "sink": {
+        "file": "vendor/pear/net_socket/Net/Socket.php",
+        "kind": "file",
+        "line": 389,
+        "name": "fwrite"
+      }
+    },
+    {
+      "depth": 9,
+      "entry": {
+        "class": "rcube_sieve",
+        "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+        "line": 119,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "rcube_sieve",
+          "edge": "entry",
+          "file": "plugins/managesieve/lib/Roundcube/rcube_sieve.php",
+          "line": 119,
+          "method": "__destruct"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method disconnect",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 434,
+          "method": "disconnect"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdLogout",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1114,
+          "method": "_cmdLogout"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _doCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1280,
+          "method": "_doCmd"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _handleConnectAndLogin",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 339,
+          "method": "_handleConnectAndLogin"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method login",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 450,
+          "method": "login"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _cmdAuthenticate",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 679,
+          "method": "_cmdAuthenticate"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _authEXTERNAL",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 923,
+          "method": "_authEXTERNAL"
+        },
+        {
+          "class": "Net_Sieve",
+          "edge": "method _sendCmd",
+          "file": "vendor/pear/net_sieve/Sieve.php",
+          "line": 1201,
+          "method": "_sendCmd"
+        },
+        {
+          "class": "Net_Socket",
+          "edge": "method write",
+          "file": "vendor/pear/net_socket/Net/Socket.php",
+          "line": 382,
+          "method": "write"
+        }
+      ],
+      "score": 23,
+      "sink": {
+        "file": "vendor/pear/net_socket/Net/Socket.php",
+        "kind": "file",
+        "line": 413,
+        "name": "fwrite"
+      }
+    }
+  ],
+  "sink_counts": {
+    "dispatch": 32,
+    "file": 18,
+    "reentry": 2,
+    "terminal": 6
+  },
+  "visits": 154
+}

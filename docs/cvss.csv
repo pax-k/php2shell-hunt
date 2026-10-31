@@ -1,0 +1,6 @@
+finding,scenario,av,ac,pr,ui,s,c,i,a,score_v31,vector_v4,status,evidence
+var_destroy,in-scope lab sink + custom gadget,N,H,N,N,U,H,H,H,8.1,AV:N/AC:H/AT:P/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N,proven,poc/verify_vardestroy_postcarrier.py
+var_destroy,default app sink + stock terminal gadget,N,L,N,N,U,H,H,H,9.8,AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:N/SI:N/SA:N,target,tracks A+B
+var_destroy,scope change demonstrated,N,L,N,N,C,H,H,H,10.0,AV:N/AC:L/AT:N/PR:N/UI:N/VC:H/VI:H/VA:H/SC:H/SI:H/SA:H,not-claimed,track D
+mbstring_sjismac,controlled 1-2 byte glibc heap write,N,H,N,N,U,N,L,L,4.8,AV:N/AC:H/AT:P/PR:N/UI:N/VC:N/VI:L/VA:L/SC:N/SI:N/SA:N,proven,held pending disclosure
+cve-2026-109618-109619,official advisory,N,L,N,N,U,H,H,H,9.2,per-advisory,external,php.net advisory

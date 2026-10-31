@@ -1,0 +1,7 @@
+id: php-magic-method
+language: php
+severity: info
+message: PHP magic method
+rule:
+  kind: name
+  regex: ^__(destruct|wakeup|unserialize|sleep|serialize|toString|call|callStatic|get|set|isset|unset|invoke|set_state|clone|debugInfo)$

@@ -1,0 +1,31 @@
+# Full-extension ASAN/UBSan CLI build for the disclosure fuzzing campaign.
+#   docker build --build-arg PHP_VERSION=8.4.27 -t php-fuzz-full-8427:local -f fuzz/Dockerfile.fuzz .
+ARG PHP_VERSION=8.4.27
+
+FROM debian:bookworm-slim AS build
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        build-essential autoconf pkg-config ca-certificates curl \
+        libxml2-dev libsqlite3-dev zlib1g-dev libonig-dev \
+    && rm -rf /var/lib/apt/lists/*
+WORKDIR /usr/src/php
+ARG PHP_VERSION
+RUN curl -fsSLo php.tar.gz https://www.php.net/distributions/php-${PHP_VERSION}.tar.gz \
+    && tar -xzf php.tar.gz --strip-components=1
+RUN set -e; \
+    ./configure \
+        --enable-debug --disable-phpdbg --enable-mbstring \
+        --with-pdo-sqlite \
+        CFLAGS="-g -O1 -fsanitize=address,undefined -fno-omit-frame-pointer" \
+        LDFLAGS="-fsanitize=address,undefined" \
+    || { echo "=== configure failed ==="; grep -n -A6 -i "error" config.log | tail -40; exit 1; }; \
+    make -j"$(nproc)" && make install
+
+FROM debian:bookworm-slim
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        ca-certificates libasan8 libubsan1 libxml2 zlib1g libonig5 libsqlite3-0 \
+    && rm -rf /var/lib/apt/lists/*
+COPY --from=build /usr/local /usr/local
+ENV USE_ZEND_ALLOC=0 \
+    ASAN_OPTIONS="detect_leaks=0,detect_stack_use_after_return=1:abort_on_error=1:halt_on_error=1"
+WORKDIR /work
+CMD ["php", "-v"]

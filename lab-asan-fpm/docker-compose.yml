@@ -1,0 +1,23 @@
+services:
+  php:
+    image: php-asan-fpm-lab:local
+    build: .
+    container_name: php2shell-asan-fpm
+    # The allocator mode (USE_ZEND_ALLOC/USE_TRACKED_ALLOC) is decided at
+    # PHP module startup, which happens in the FPM MASTER before workers
+    # fork — pool env[] directives apply too late. Set it on the container.
+    environment:
+      - USE_ZEND_ALLOC=0
+      - USE_TRACKED_ALLOC=1
+    volumes:
+      - ../lab-chain-a/webroot:/var/www/html
+    security_opt: [seccomp:unconfined]
+
+  nginx:
+    image: nginx:alpine
+    container_name: php2shell-asan-nginx
+    ports: ["18084:80"]
+    volumes:
+      - ../lab-chain-a/webroot:/var/www/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on: [php]

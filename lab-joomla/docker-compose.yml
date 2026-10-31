@@ -1,0 +1,40 @@
+services:
+  db:
+    image: mariadb:10.11
+    container_name: php2shell-joomla-db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: joomla
+      MYSQL_USER: joomla
+      MYSQL_PASSWORD: joomlapass
+    volumes:
+      - joomla_db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      retries: 30
+
+  php:
+    build: .
+    image: php-joomla-lab:local
+    container_name: php2shell-joomla
+    volumes:
+      - ./webroot:/var/www/html
+      - ./php.ini:/usr/local/etc/php/php.ini
+    command: >
+      sh -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && exec php-fpm"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  nginx:
+    image: nginx:alpine
+    container_name: php2shell-joomla-nginx
+    ports: ["18096:80"]
+    volumes:
+      - ./webroot:/var/www/html:ro
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on: [php]
+
+volumes:
+  joomla_db:

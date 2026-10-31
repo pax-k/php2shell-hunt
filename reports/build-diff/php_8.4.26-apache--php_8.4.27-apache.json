@@ -1,0 +1,717 @@
+{
+  "external": {
+    "abidiff": {
+      "hint": "pass --abidiff to run it",
+      "status": "unavailable"
+    },
+    "ghidriff": {
+      "hint": "pass --ghidriff to run it",
+      "status": "unavailable"
+    }
+  },
+  "new": {
+    "arch": "aarch64",
+    "digests": [
+      "php@sha256:be1326658a7d36dba6be79a71212d6ff9c5f854335b8ba77d714da1852c1b2ea"
+    ],
+    "id": "sha256:3d1ad08d8aca7f2a4599e46cd11e54cab81fb6666201017ac672e7d67b52676f",
+    "image": "php:8.4.27-apache",
+    "os": "linux",
+    "php_version": "8.4.27",
+    "size": 522606526
+  },
+  "old": {
+    "arch": "aarch64",
+    "digests": [
+      "php@sha256:60111400ff77bdc44fa79b4f072afe49a42abba71e0846ad496be4761dc9c11a"
+    ],
+    "id": "sha256:36d8a1e2dfd03adda10f5817225df8a9bf0e434498744fbfd3d7ef0fc82c26f8",
+    "image": "php:8.4.26-apache",
+    "os": "linux",
+    "php_version": "8.4.26",
+    "size": 522409810
+  },
+  "schema": 1,
+  "targets": [
+    {
+      "diff": {
+        "notable": [
+          {
+            "name": "zif_system",
+            "new": 4396304,
+            "new_size": 8,
+            "old": 4377968,
+            "old_size": 8,
+            "shift": 18336
+          },
+          {
+            "name": "zif_passthru",
+            "new": 4396320,
+            "new_size": 8,
+            "old": 4377984,
+            "old_size": 8,
+            "shift": 18336
+          },
+          {
+            "name": "zif_exec",
+            "new": 4396296,
+            "new_size": 8,
+            "old": 4377960,
+            "old_size": 8,
+            "shift": 18336
+          },
+          {
+            "name": "zval_ptr_dtor",
+            "new": 6556128,
+            "new_size": 80,
+            "old": 6521120,
+            "old_size": 80,
+            "shift": 35008
+          },
+          {
+            "name": "php_session_initialize",
+            "new": 4034508,
+            "new_size": 988,
+            "old": 4009668,
+            "old_size": 1020,
+            "shift": 24840
+          },
+          {
+            "name": "php_session_flush",
+            "new": 4038284,
+            "new_size": 632,
+            "old": 4013480,
+            "old_size": 636,
+            "shift": 24804
+          },
+          {
+            "name": "php_var_unserialize",
+            "new": 4786116,
+            "new_size": 120,
+            "old": 4761680,
+            "old_size": 124,
+            "shift": 24436
+          },
+          {
+            "name": "var_destroy",
+            "new": 4785120,
+            "new_size": 856,
+            "old": 4760704,
+            "old_size": 844,
+            "shift": 24416
+          },
+          {
+            "name": "zend_objects_store_del",
+            "new": 6458272,
+            "new_size": 320,
+            "old": 6424864,
+            "old_size": 320,
+            "shift": 33408
+          },
+          {
+            "name": "php_request_shutdown",
+            "new": 5031424,
+            "new_size": 848,
+            "old": 5002304,
+            "old_size": 836,
+            "shift": 29120
+          }
+        ],
+        "sections_changed": [
+          {
+            "name": ".bss",
+            "new_sha": "ba9835c65fc06b38",
+            "new_size": 136744,
+            "old_sha": "a4d1d21cbff37886",
+            "old_size": 136712,
+            "state": "changed"
+          },
+          {
+            "name": ".data",
+            "new_sha": "a1ec319ff527ae71",
+            "new_size": 799952,
+            "old_sha": "053fecdd0ee8e74c",
+            "old_size": 799984,
+            "state": "changed"
+          },
+          {
+            "name": ".data.rel.ro",
+            "new_sha": "8c6718badd72eb8f",
+            "new_size": 841584,
+            "old_sha": "68a14b017d348bed",
+            "old_size": 841520,
+            "state": "changed"
+          },
+          {
+            "name": ".dynamic",
+            "new_sha": "5a5c0ab91d063782",
+            "new_size": 640,
+            "old_sha": "3b6398acfbacb22d",
+            "old_size": 640,
+            "state": "changed"
+          },
+          {
+            "name": ".dynstr",
+            "new_sha": "9824cf7767e6eda5",
+            "new_size": 83390,
+            "old_sha": "22ff5325781bb7a2",
+            "old_size": 82537,
+            "state": "changed"
+          },
+          {
+            "name": ".dynsym",
+            "new_sha": "e626888f13ba29f2",
+            "new_size": 94968,
+            "old_sha": "5541a5f1ec65e255",
+            "old_size": 94032,
+            "state": "changed"
+          },
+          {
+            "name": ".eh_frame",
+            "new_sha": "09adb3e774e6db01",
+            "new_size": 646240,
+            "old_sha": "50480e3b13dc0fbb",
+            "old_size": 642632,
+            "state": "changed"
+          },
+          {
+            "name": ".eh_frame_hdr",
+            "new_sha": "afb7088110e2d9c2",
+            "new_size": 100156,
+            "old_sha": "cd004b9322439d2d",
+            "old_size": 99772,
+            "state": "changed"
+          },
+          {
+            "name": ".fini_array",
+            "new_sha": "04a1512e894637e1",
+            "new_size": 8,
+            "old_sha": "ff2e2aa7ccbe65f1",
+            "old_size": 8,
+            "state": "changed"
+          },
+          {
+            "name": ".gnu.hash",
+            "new_sha": "46fc47b1c8704a95",
+            "new_size": 16792,
+            "old_sha": "1434d8ad5a1f7168",
+            "old_size": 16640,
+            "state": "changed"
+          },
+          {
+            "name": ".gnu.version",
+            "new_sha": "764c906a4d303654",
+            "new_size": 7914,
+            "old_sha": "98a3add656e2789e",
+            "old_size": 7836,
+            "state": "changed"
+          },
+          {
+            "name": ".gnu.version_r",
+            "new_sha": "3ab9bac0b1ea365c",
+            "new_size": 768,
+            "old_sha": "7832ae416a4fecd1",
+            "old_size": 768,
+            "state": "changed"
+          },
+          {
+            "name": ".got",
+            "new_sha": "fae37bb8af0e697d",
+            "new_size": 6408,
+            "old_sha": "66202e5e864c1ceb",
+            "old_size": 6408,
+            "state": "changed"
+          },
+          {
+            "name": ".got.plt",
+            "new_sha": "109cb9562d377222",
+            "new_size": 23096,
+            "old_sha": "e6938086de97b0a1",
+            "old_size": 22824,
+            "state": "changed"
+          },
+          {
+            "name": ".init",
+            "new_sha": "9e6c73105dd6a64b",
+            "new_size": 28,
+            "old_sha": "14f606f18a6b38a7",
+            "old_size": 28,
+            "state": "changed"
+          },
+          {
+            "name": ".init_array",
+            "new_sha": "29e81c729654965a",
+            "new_size": 16,
+            "old_sha": "f4ad6852b8ec40b2",
+            "old_size": 16,
+            "state": "changed"
+          },
+          {
+            "name": ".note.gnu.build-id",
+            "new_sha": "9948673f88e59c1b",
+            "new_size": 36,
+            "old_sha": "42fd062cd311d9ec",
+            "old_size": 36,
+            "state": "changed"
+          },
+          {
+            "name": ".plt",
+            "new_sha": "b7767b5cfe3c571b",
+            "new_size": 46176,
+            "old_sha": "bddc705edab602c4",
+            "old_size": 45632,
+            "state": "changed"
+          },
+          {
+            "name": ".rela.dyn",
+            "new_sha": "2d10a29049680e7f",
+            "new_size": 1134624,
+            "old_sha": "03bcb8e3f9139f40",
+            "old_size": 1134552,
+            "state": "changed"
+          },
+          {
+            "name": ".rela.plt",
+            "new_sha": "42146884689db661",
+            "new_size": 69216,
+            "old_sha": "660e9e65bdfa01b6",
+            "old_size": 68400,
+            "state": "changed"
+          },
+          {
+            "name": ".rodata",
+            "new_sha": "67db03bf84e932bc",
+            "new_size": 10717752,
+            "old_sha": "1a270db3b07debe3",
+            "old_size": 10717912,
+            "state": "changed"
+          },
+          {
+            "name": ".strtab",
+            "new_sha": "f833d9658ef1db6f",
+            "new_size": 542611,
+            "old_sha": "bf7aeb9b9b989f5a",
+            "old_size": 541504,
+            "state": "changed"
+          },
+          {
+            "name": ".symtab",
+            "new_sha": "a2b5707356b450d7",
+            "new_size": 569136,
+            "old_sha": "03c7ec70870bd72f",
+            "old_size": 568056,
+            "state": "changed"
+          },
+          {
+            "name": ".text",
+            "new_sha": "f2ee05956d1a5c6e",
+            "new_size": 5147956,
+            "old_sha": "e6b1777ef502b24c",
+            "old_size": 5111572,
+            "state": "changed"
+          }
+        ],
+        "shift": {
+          "histogram": [
+            [
+              15744,
+              1305
+            ],
+            [
+              15808,
+              929
+            ],
+            [
+              28448,
+              370
+            ],
+            [
+              33408,
+              302
+            ],
+            [
+              9952,
+              284
+            ],
+            [
+              9452,
+              279
+            ],
+            [
+              11232,
+              279
+            ],
+            [
+              12160,
+              247
+            ],
+            [
+              25920,
+              230
+            ],
+            [
+              28416,
+              214
+            ],
+            [
+              29920,
+              195
+            ],
+            [
+              15360,
+              176
+            ],
+            [
+              26048,
+              168
+            ],
+            [
+              21312,
+              167
+            ],
+            [
+              9664,
+              161
+            ],
+            [
+              26368,
+              155
+            ],
+            [
+              25056,
+              149
+            ],
+            [
+              28736,
+              146
+            ],
+            [
+              28480,
+              141
+            ],
+            [
+              24000,
+              138
+            ]
+          ],
+          "median": 21888,
+          "mode": [
+            15744,
+            1305
+          ],
+          "top": [
+            [
+              "ZEND_FRAMELESS_ICALL_0_SPEC_UNUSED_UNUSED_HANDLER",
+              381280,
+              6115744
+            ],
+            [
+              "ZEND_FRAMELESS_ICALL_1_SPEC_UNUSED_HANDLER",
+              369728,
+              6115360
+            ],
+            [
+              "ZEND_FRAMELESS_ICALL_2_SPEC_HANDLER",
+              368732,
+              6113740
+            ],
+            [
+              "ZEND_FRAMELESS_ICALL_3_SPEC_HANDLER",
+              368420,
+              6114404
+            ],
+            [
+              "ZEND_FAST_CONCAT_SPEC_TMPVAR_CV_HANDLER",
+              100160,
+              5886656
+            ],
+            [
+              "ZEND_FAST_CONCAT_SPEC_TMPVAR_TMPVAR_HANDLER",
+              99552,
+              5884864
+            ],
+            [
+              "ZEND_FAST_CONCAT_SPEC_TMPVAR_CONST_HANDLER",
+              98844,
+              5883328
+            ],
+            [
+              "mb_wchar_to_sjismac",
+              73272,
+              3502496
+            ],
+            [
+              "mb_wchar_to_iso2022jp",
+              62652,
+              3486112
+            ],
+            [
+              "zend_assign_to_string_offset",
+              62592,
+              5887680
+            ],
+            [
+              "mb_wchar_to_cp50222",
+              61888,
+              3487712
+            ],
+            [
+              "mb_wchar_to_jis",
+              61024,
+              3482976
+            ],
+            [
+              "mb_wchar_to_iso2022kr",
+              57588,
+              3484640
+            ],
+            [
+              "mb_wchar_to_cp50221",
+              57088,
+              3481904
+            ],
+            [
+              "mb_wchar_to_hz",
+              51552,
+              3493760
+            ],
+            [
+              "zim_PDOStatement_bindParam",
+              47972,
+              3662192
+            ],
+            [
+              "zim_PDOStatement_bindColumn",
+              47968,
+              3662208
+            ],
+            [
+              "register_bound_param",
+              47920,
+              3661424
+            ],
+            [
+              "mb_wchar_to_eucjpwin",
+              47036,
+              3480480
+            ],
+            [
+              "mb_wchar_to_sjis",
+              46464,
+              3474852
+            ]
+          ],
+          "unique": 860
+        },
+        "symbols": {
+          "added": 69,
+          "added_names": [
+            "OnChangeMemoryHardLimitPercent",
+            "_fecalloc",
+            "_femalloc",
+            "_ferealloc",
+            "_ferealloc2",
+            "_safe_femalloc",
+            "_safe_ferealloc",
+            "_zend_fnew_array",
+            "_zend_fnew_array_0",
+            "e843419@0064_000001e0_388",
+            "e843419@009c_000002eb_3204",
+            "e843419@028c_00000aca_47e4",
+            "e843419@02f0_00000cc2_8e4",
+            "e843419@031a_00000d9d_184a8",
+            "e843419@031a_00000d9d_1a4a4",
+            "e843419@031a_00000d9d_24a4",
+            "e843419@0324_00000dd3_b20",
+            "e843419@0378_00000f82_b38",
+            "e843419@03c8_00001106_2940",
+            "e843419@0422_000012aa_964",
+            "e843419@0472_00001414_3bc8",
+            "e843419@047a_0000143e_3208",
+            "e843419@04ec_00001666_cc4",
+            "object_finit",
+            "php_basic_early_rinit",
+            "php_curl_call_callback",
+            "php_url_scanner_early_rinit",
+            "php_var_serialize_set_incomplete_classes_only",
+            "php_var_unserialize_set_incomplete_classes_only",
+            "php_zlib_inflate_grow.constprop.0",
+            "sccp_values_differ",
+            "smart_str_ferealloc",
+            "smart_str_frealloc",
+            "tokenize",
+            "tracked_max_allocs_error",
+            "zend_ast_export_var_list",
+            "zend_handle_delayed_oom",
+            "zend_hash_do_fresize",
+            "zend_hash_fadd_new",
+            "zend_hash_fconvert_packed_to_hash",
+            "zend_hash_fextend",
+            "zend_hash_flookup",
+            "zend_hash_fupdate",
+            "zend_hash_index_flookup",
+            "zend_hash_index_fupdate",
+            "zend_hash_next_index_finsert",
+            "zend_hash_next_index_finsert_new",
+            "zend_hash_packed_fgrow",
+            "zend_hash_real_finit",
+            "zend_hash_real_finit_mixed",
+            "zend_hash_real_finit_packed",
+            "zend_mm_delayed_error.constprop.0",
+            "zend_mm_delayed_error_or_panic",
+            "zend_mm_delayed_verror",
+            "zend_mm_hard_limit_error",
+            "zend_mm_is_fallible",
+            "zend_mm_max_allocs_hit",
+            "zend_mm_oom_info_dtor",
+            "zend_mm_panic",
+            "zend_mm_set_fallible",
+            "zend_mm_set_max_allocs",
+            "zend_mm_update_hard_limit",
+            "zend_new_array_singleton",
+            "zend_objects_fnew",
+            "zend_sensitive_parameter_value_init",
+            "zend_set_memory_hard_limit_percent",
+            "zend_string_finit_existing_interned",
+            "zend_string_ftolower_ex",
+            "zm_post_zend_deactivate_streams"
+          ],
+          "common": 12571,
+          "removed": 22,
+          "removed_names": [
+            "_zend_substr",
+            "e843419@006a_000001fd_6708",
+            "e843419@0236_00000929_2e4",
+            "e843419@02f2_00000ccd_6524",
+            "e843419@02fc_00000d06_c4",
+            "e843419@031a_00000d9d_fa24",
+            "e843419@032c_00000e05_5ac4",
+            "e843419@0342_00000e80_78a0",
+            "e843419@0342_00000e80_8a8",
+            "e843419@0356_00000edf_1284",
+            "e843419@03c8_00001105_3568",
+            "e843419@0408_00001231_664",
+            "e843419@0440_0000132a_a4",
+            "e843419@0482_0000146c_e4",
+            "e843419@048e_000014a4_16e8",
+            "e843419@0490_000014b0_64060",
+            "sxe_xmlNodeListGetString.constprop.0",
+            "tokenize.isra.0",
+            "zend_hash_do_resize.part.0",
+            "zend_mm_panic.constprop.0",
+            "zend_mm_safe_error",
+            "zm_deactivate_streams"
+          ],
+          "size_changed": 717,
+          "size_changed_names": [
+            "php_var_serialize_intern.part.0",
+            "php_stream_url_wrap_http_ex.isra.0",
+            "php_json_escape_string",
+            "php_json_encode_array",
+            "php_var_export_ex",
+            "rfc1867_post_handler",
+            "php_session_reset_id",
+            "sxe_get_prop_hash",
+            "zend_trace_to_string",
+            "cli_get_prompt",
+            "metaphone.constprop.0",
+            "_php_mb_regex_ereg_replace_exec",
+            "_property_string",
+            "php_setcookie",
+            "dbstmt_get_gc",
+            "zif_substr",
+            "zflf_substr_3",
+            "php_json_encode_zval",
+            "zim_ReflectionExtension___toString",
+            "php_var_unserialize_internal",
+            "zif_mb_send_mail",
+            "append_modified_url",
+            "mb_wchar_to_sjis_sb",
+            "php_pcre_replace_func_impl",
+            "zend_ast_export_ex",
+            "zflf_substr_2",
+            "pdo_stmt_setup_fetch_mode",
+            "mb_wchar_to_sjis_kddi",
+            "mysqlnd_mysqlnd_conn_data_tx_cor_options_to_string_pub",
+            "sqlite3_do_callback.isra.0",
+            "_function_string",
+            "populate_subpat_array",
+            "url_adapt_ext",
+            "mb_wchar_to_iso2022jp",
+            "zend_print_zval_r_to_buf",
+            "php_pcre_replace_impl",
+            "zend_hash_packed_to_hash",
+            "zend_fetch_debug_backtrace",
+            "_php_iconv_mime_encode",
+            "php_pcre_match_impl",
+            "print_hash",
+            "php_xpath_eval.isra.0",
+            "zif_array_pad",
+            "php_session_rfc1867_callback",
+            "zim_PDOStatement_execute",
+            "zif_mb_str_split",
+            "format_default_value.part.0",
+            "zend_hash_packed_grow",
+            "php_filter_encode_html",
+            "php_fputcsv",
+            "_parameter_string.isra.0",
+            "mbfl_strcut",
+            "xml_startElementHandler",
+            "zim_ReflectionAttribute___toString",
+            "zend_print_flat_zval_r_to_buf",
+            "mb_wchar_to_jis",
+            "mb_wchar_to_utf8",
+            "mb_wchar_to_sjis",
+            "OnUpdateBaseDir",
+            "_class_string",
+            "gc_call_destructors_in_fiber.isra.0",
+            "php_sqlite3_callback_compare",
+            "zend_mm_alloc_pages",
+            "zif_inflate_add",
+            "mb_wchar_to_hz",
+            "php_sqlite3_authorizer",
+            "tracked_malloc",
+            "tracked_realloc",
+            "curl_debug",
+            "curl_progress",
+            "mb_wchar_to_iso2022jpms",
+            "php_stream_handle_proxy_authorization_header",
+            "_class_const_string",
+            "curl_fnmatch",
+            "curl_prereqfunction",
+            "curl_ssh_hostkeyfunction",
+            "mb_mime_header_encode",
+            "mb_wchar_to_iso2022kr",
+            "php_url_encode_hash_ex",
+            "print_flat_hash",
+            "zim_SplObjectStorage_serialize",
+            "curl_read",
+            "format_converter",
+            "zend_mm_realloc_huge",
+            "zim_SimpleXMLElement_xpath",
+            "curl_xferinfo",
+            "zend_mm_alloc_huge",
+            "zend_register_functions",
+            "zif_mb_str_pad",
+            "php_implode",
+            "curl_write_header",
+            "mb_wchar_to_utf7imap",
+            "mb_wchar_to_utf8_kddi.isra.0",
+            "php_strtr_array_ex",
+            "php_url_scanner_add_var_impl",
+            "zend_get_function_declaration",
+            "php_strtr_array",
+            "zend_get_attribute_target_names",
+            "mb_wchar_to_sjismac",
+            "php_pcre_split_impl"
+          ]
+        }
+      },
+      "new_build_id": "c3e798ce04dbd39cb24d8b0c3bab880acc2292c6",
+      "new_sha256": "272b9322a06f4a687bd896a5fc61c3e9fb5d2de83815738ac37ede2dce3e9852",
+      "old_build_id": "b3525423bd3d026677be6de48285e46ae5a5604b",
+      "old_sha256": "e160c9d173be0e170add2ab461ba2995d0dd9ac0feb6faf3e763c052c998ab4b",
+      "path": "/usr/lib/apache2/modules/libphp.so"
+    }
+  ]
+}

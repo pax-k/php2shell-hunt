@@ -1,0 +1,3794 @@
+{
+  "classes": 5047,
+  "entries": 272,
+  "facts_errors": 0,
+  "files": 6077,
+  "methods": 23687,
+  "paths": [
+    {
+      "depth": 0,
+      "entry": {
+        "class": "FileLogger",
+        "file": "api/endpoint.php",
+        "line": 16,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "FileLogger",
+          "edge": "entry",
+          "file": "api/endpoint.php",
+          "line": 16,
+          "method": "__destruct"
+        }
+      ],
+      "score": 90,
+      "sink": {
+        "file": "api/endpoint.php",
+        "kind": "terminal",
+        "line": 22,
+        "name": "shell_exec"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\Mail\\Mail",
+        "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method connected",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 693,
+          "method": "connected"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 61,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\Mail\\Mail",
+        "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method close",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 720,
+          "method": "close"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 61,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method connected",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 693,
+          "method": "connected"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 61,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method close",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 720,
+          "method": "close"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 61,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method connected",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 693,
+          "method": "connected"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 61,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method close",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 720,
+          "method": "close"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 61,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 4,
+      "entry": {
+        "class": "Joomla\\CMS\\Mail\\Mail",
+        "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method connected",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 693,
+          "method": "connected"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method close",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 720,
+          "method": "close"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 58,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 4,
+      "entry": {
+        "class": "Joomla\\CMS\\Mail\\Mail",
+        "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method quit",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 960,
+          "method": "quit"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method sendCommand",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1052,
+          "method": "sendCommand"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 58,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 4,
+      "entry": {
+        "class": "Joomla\\CMS\\Mail\\Mail",
+        "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method quit",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 960,
+          "method": "quit"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method close",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 720,
+          "method": "close"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 58,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 4,
+      "entry": {
+        "class": "Joomla\\CMS\\Mail\\Mail",
+        "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method quit",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 960,
+          "method": "quit"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method sendCommand",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1052,
+          "method": "sendCommand"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method client_send",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1179,
+          "method": "client_send"
+        }
+      ],
+      "score": 58,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 1192,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 4,
+      "entry": {
+        "class": "Joomla\\CMS\\Mail\\Mail",
+        "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method quit",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 960,
+          "method": "quit"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method sendCommand",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1052,
+          "method": "sendCommand"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method get_lines",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1279,
+          "method": "get_lines"
+        }
+      ],
+      "score": 58,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 1297,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 4,
+      "entry": {
+        "class": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method connected",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 693,
+          "method": "connected"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method close",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 720,
+          "method": "close"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 58,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 4,
+      "entry": {
+        "class": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method quit",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 960,
+          "method": "quit"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method sendCommand",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1052,
+          "method": "sendCommand"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 58,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 4,
+      "entry": {
+        "class": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method quit",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 960,
+          "method": "quit"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method close",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 720,
+          "method": "close"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 58,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 4,
+      "entry": {
+        "class": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method connected",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 693,
+          "method": "connected"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method close",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 720,
+          "method": "close"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 58,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 4,
+      "entry": {
+        "class": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method quit",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 960,
+          "method": "quit"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method sendCommand",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1052,
+          "method": "sendCommand"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 58,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 4,
+      "entry": {
+        "class": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method quit",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 960,
+          "method": "quit"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method close",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 720,
+          "method": "close"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 58,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 4,
+      "entry": {
+        "class": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method quit",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 960,
+          "method": "quit"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method sendCommand",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1052,
+          "method": "sendCommand"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method client_send",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1179,
+          "method": "client_send"
+        }
+      ],
+      "score": 58,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 1192,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 4,
+      "entry": {
+        "class": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method quit",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 960,
+          "method": "quit"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method sendCommand",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1052,
+          "method": "sendCommand"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method get_lines",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1279,
+          "method": "get_lines"
+        }
+      ],
+      "score": 58,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 1297,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 4,
+      "entry": {
+        "class": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method quit",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 960,
+          "method": "quit"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method sendCommand",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1052,
+          "method": "sendCommand"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method client_send",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1179,
+          "method": "client_send"
+        }
+      ],
+      "score": 58,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 1192,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 4,
+      "entry": {
+        "class": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method quit",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 960,
+          "method": "quit"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method sendCommand",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1052,
+          "method": "sendCommand"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method get_lines",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1279,
+          "method": "get_lines"
+        }
+      ],
+      "score": 58,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 1297,
+        "name": "call_user_func_array"
+      }
+    },
+    {
+      "depth": 5,
+      "entry": {
+        "class": "Joomla\\CMS\\Mail\\Mail",
+        "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method quit",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 960,
+          "method": "quit"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method sendCommand",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1052,
+          "method": "sendCommand"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method connected",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 693,
+          "method": "connected"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 55,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 5,
+      "entry": {
+        "class": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method quit",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 960,
+          "method": "quit"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method sendCommand",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1052,
+          "method": "sendCommand"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method connected",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 693,
+          "method": "connected"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 55,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 5,
+      "entry": {
+        "class": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method quit",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 960,
+          "method": "quit"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method sendCommand",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1052,
+          "method": "sendCommand"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method connected",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 693,
+          "method": "connected"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 55,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 6,
+      "entry": {
+        "class": "Joomla\\CMS\\Mail\\Mail",
+        "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method quit",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 960,
+          "method": "quit"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method sendCommand",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1052,
+          "method": "sendCommand"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method connected",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 693,
+          "method": "connected"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method close",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 720,
+          "method": "close"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 52,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 6,
+      "entry": {
+        "class": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method quit",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 960,
+          "method": "quit"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method sendCommand",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1052,
+          "method": "sendCommand"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method connected",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 693,
+          "method": "connected"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method close",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 720,
+          "method": "close"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 52,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 6,
+      "entry": {
+        "class": "PHPMailer\\PHPMailer\\PHPMailer",
+        "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+        "line": 856,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "entry",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 856,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Mail\\Mail",
+          "defining": "PHPMailer\\PHPMailer\\PHPMailer",
+          "edge": "method smtpClose",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/PHPMailer.php",
+          "line": 2357,
+          "method": "smtpClose"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method quit",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 960,
+          "method": "quit"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method sendCommand",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 1052,
+          "method": "sendCommand"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method connected",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 693,
+          "method": "connected"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method close",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 720,
+          "method": "close"
+        },
+        {
+          "class": "PHPMailer\\PHPMailer\\SMTP",
+          "edge": "method edebug",
+          "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+          "line": 285,
+          "method": "edebug"
+        }
+      ],
+      "score": 52,
+      "sink": {
+        "file": "libraries/vendor/phpmailer/phpmailer/src/SMTP.php",
+        "kind": "dispatch",
+        "line": 299,
+        "name": "call_user_func"
+      }
+    },
+    {
+      "depth": 0,
+      "entry": {
+        "class": "FileLogger",
+        "file": "api/endpoint.php",
+        "line": 16,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "FileLogger",
+          "edge": "entry",
+          "file": "api/endpoint.php",
+          "line": 16,
+          "method": "__destruct"
+        }
+      ],
+      "score": 50,
+      "sink": {
+        "file": "api/endpoint.php",
+        "kind": "file",
+        "line": 26,
+        "name": "file_put_contents"
+      }
+    },
+    {
+      "depth": 0,
+      "entry": {
+        "class": "ZIPExtraction",
+        "file": "administrator/components/com_joomlaupdate/extract.php",
+        "line": 492,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "ZIPExtraction",
+          "edge": "entry",
+          "file": "administrator/components/com_joomlaupdate/extract.php",
+          "line": 492,
+          "method": "__wakeup"
+        }
+      ],
+      "score": 50,
+      "sink": {
+        "file": "administrator/components/com_joomlaupdate/extract.php",
+        "kind": "file",
+        "line": 501,
+        "name": "fopen"
+      }
+    },
+    {
+      "depth": 1,
+      "entry": {
+        "class": "Joomla\\CMS\\Client\\FtpClient",
+        "file": "libraries/src/Client/FtpClient.php",
+        "line": 209,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Client\\FtpClient",
+          "edge": "entry",
+          "file": "libraries/src/Client/FtpClient.php",
+          "line": 209,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Client\\FtpClient",
+          "edge": "method quit",
+          "file": "libraries/src/Client/FtpClient.php",
+          "line": 402,
+          "method": "quit"
+        }
+      ],
+      "score": 47,
+      "sink": {
+        "file": "libraries/src/Client/FtpClient.php",
+        "kind": "file",
+        "line": 412,
+        "name": "fwrite"
+      }
+    },
+    {
+      "depth": 1,
+      "entry": {
+        "class": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+        "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+        "line": 127,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+          "edge": "entry",
+          "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+          "line": 127,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\Filesystem\\File",
+          "edge": "static write",
+          "file": "libraries/vendor/joomla/filesystem/src/File.php",
+          "line": 263,
+          "method": "write"
+        }
+      ],
+      "score": 47,
+      "sink": {
+        "file": "libraries/vendor/joomla/filesystem/src/File.php",
+        "kind": "file",
+        "line": 290,
+        "name": "file_put_contents"
+      }
+    },
+    {
+      "depth": 1,
+      "entry": {
+        "class": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+        "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+        "line": 127,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+          "edge": "entry",
+          "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+          "line": 127,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\Filesystem\\File",
+          "edge": "static write",
+          "file": "libraries/vendor/joomla/filesystem/src/File.php",
+          "line": 263,
+          "method": "write"
+        }
+      ],
+      "score": 47,
+      "sink": {
+        "file": "libraries/vendor/joomla/filesystem/src/File.php",
+        "kind": "file",
+        "line": 292,
+        "name": "file_put_contents"
+      }
+    },
+    {
+      "depth": 1,
+      "entry": {
+        "class": "Joomla\\CMS\\Log\\Logger\\W3cLogger",
+        "defining": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+        "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+        "line": 127,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Log\\Logger\\W3cLogger",
+          "defining": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+          "edge": "entry",
+          "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+          "line": 127,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\Filesystem\\File",
+          "edge": "static write",
+          "file": "libraries/vendor/joomla/filesystem/src/File.php",
+          "line": 263,
+          "method": "write"
+        }
+      ],
+      "score": 47,
+      "sink": {
+        "file": "libraries/vendor/joomla/filesystem/src/File.php",
+        "kind": "file",
+        "line": 290,
+        "name": "file_put_contents"
+      }
+    },
+    {
+      "depth": 1,
+      "entry": {
+        "class": "Joomla\\CMS\\Log\\Logger\\W3cLogger",
+        "defining": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+        "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+        "line": 127,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Log\\Logger\\W3cLogger",
+          "defining": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+          "edge": "entry",
+          "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+          "line": 127,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\Filesystem\\File",
+          "edge": "static write",
+          "file": "libraries/vendor/joomla/filesystem/src/File.php",
+          "line": 263,
+          "method": "write"
+        }
+      ],
+      "score": 47,
+      "sink": {
+        "file": "libraries/vendor/joomla/filesystem/src/File.php",
+        "kind": "file",
+        "line": 292,
+        "name": "file_put_contents"
+      }
+    },
+    {
+      "depth": 1,
+      "entry": {
+        "class": "Joomla\\Filesystem\\Clients\\FtpClient",
+        "file": "libraries/vendor/joomla/filesystem/src/Clients/FtpClient.php",
+        "line": 195,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\Filesystem\\Clients\\FtpClient",
+          "edge": "entry",
+          "file": "libraries/vendor/joomla/filesystem/src/Clients/FtpClient.php",
+          "line": 195,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\Filesystem\\Clients\\FtpClient",
+          "edge": "method quit",
+          "file": "libraries/vendor/joomla/filesystem/src/Clients/FtpClient.php",
+          "line": 389,
+          "method": "quit"
+        }
+      ],
+      "score": 47,
+      "sink": {
+        "file": "libraries/vendor/joomla/filesystem/src/Clients/FtpClient.php",
+        "kind": "file",
+        "line": 399,
+        "name": "fwrite"
+      }
+    },
+    {
+      "depth": 2,
+      "entry": {
+        "class": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+        "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+        "line": 127,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+          "edge": "entry",
+          "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+          "line": 127,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+          "edge": "method initFile",
+          "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+          "line": 278,
+          "method": "initFile"
+        },
+        {
+          "class": "Joomla\\Filesystem\\File",
+          "edge": "static write",
+          "file": "libraries/vendor/joomla/filesystem/src/File.php",
+          "line": 263,
+          "method": "write"
+        }
+      ],
+      "score": 44,
+      "sink": {
+        "file": "libraries/vendor/joomla/filesystem/src/File.php",
+        "kind": "file",
+        "line": 290,
+        "name": "file_put_contents"
+      }
+    },
+    {
+      "depth": 2,
+      "entry": {
+        "class": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+        "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+        "line": 127,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+          "edge": "entry",
+          "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+          "line": 127,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+          "edge": "method initFile",
+          "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+          "line": 278,
+          "method": "initFile"
+        },
+        {
+          "class": "Joomla\\Filesystem\\File",
+          "edge": "static write",
+          "file": "libraries/vendor/joomla/filesystem/src/File.php",
+          "line": 263,
+          "method": "write"
+        }
+      ],
+      "score": 44,
+      "sink": {
+        "file": "libraries/vendor/joomla/filesystem/src/File.php",
+        "kind": "file",
+        "line": 292,
+        "name": "file_put_contents"
+      }
+    },
+    {
+      "depth": 2,
+      "entry": {
+        "class": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+        "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+        "line": 127,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+          "edge": "entry",
+          "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+          "line": 127,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Log\\Logger\\W3cLogger",
+          "defining": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+          "edge": "method initFile",
+          "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+          "line": 278,
+          "method": "initFile"
+        },
+        {
+          "class": "Joomla\\Filesystem\\File",
+          "edge": "static write",
+          "file": "libraries/vendor/joomla/filesystem/src/File.php",
+          "line": 263,
+          "method": "write"
+        }
+      ],
+      "score": 44,
+      "sink": {
+        "file": "libraries/vendor/joomla/filesystem/src/File.php",
+        "kind": "file",
+        "line": 290,
+        "name": "file_put_contents"
+      }
+    },
+    {
+      "depth": 2,
+      "entry": {
+        "class": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+        "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+        "line": 127,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+          "edge": "entry",
+          "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+          "line": 127,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Log\\Logger\\W3cLogger",
+          "defining": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+          "edge": "method initFile",
+          "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+          "line": 278,
+          "method": "initFile"
+        },
+        {
+          "class": "Joomla\\Filesystem\\File",
+          "edge": "static write",
+          "file": "libraries/vendor/joomla/filesystem/src/File.php",
+          "line": 263,
+          "method": "write"
+        }
+      ],
+      "score": 44,
+      "sink": {
+        "file": "libraries/vendor/joomla/filesystem/src/File.php",
+        "kind": "file",
+        "line": 292,
+        "name": "file_put_contents"
+      }
+    },
+    {
+      "depth": 2,
+      "entry": {
+        "class": "Joomla\\CMS\\Log\\Logger\\W3cLogger",
+        "defining": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+        "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+        "line": 127,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Log\\Logger\\W3cLogger",
+          "defining": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+          "edge": "entry",
+          "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+          "line": 127,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Log\\Logger\\W3cLogger",
+          "defining": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+          "edge": "method initFile",
+          "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+          "line": 278,
+          "method": "initFile"
+        },
+        {
+          "class": "Joomla\\Filesystem\\File",
+          "edge": "static write",
+          "file": "libraries/vendor/joomla/filesystem/src/File.php",
+          "line": 263,
+          "method": "write"
+        }
+      ],
+      "score": 44,
+      "sink": {
+        "file": "libraries/vendor/joomla/filesystem/src/File.php",
+        "kind": "file",
+        "line": 290,
+        "name": "file_put_contents"
+      }
+    },
+    {
+      "depth": 2,
+      "entry": {
+        "class": "Joomla\\CMS\\Log\\Logger\\W3cLogger",
+        "defining": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+        "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+        "line": 127,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\Log\\Logger\\W3cLogger",
+          "defining": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+          "edge": "entry",
+          "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+          "line": 127,
+          "method": "__destruct"
+        },
+        {
+          "class": "Joomla\\CMS\\Log\\Logger\\W3cLogger",
+          "defining": "Joomla\\CMS\\Log\\Logger\\FormattedtextLogger",
+          "edge": "method initFile",
+          "file": "libraries/src/Log/Logger/FormattedtextLogger.php",
+          "line": 278,
+          "method": "initFile"
+        },
+        {
+          "class": "Joomla\\Filesystem\\File",
+          "edge": "static write",
+          "file": "libraries/vendor/joomla/filesystem/src/File.php",
+          "line": 263,
+          "method": "write"
+        }
+      ],
+      "score": 44,
+      "sink": {
+        "file": "libraries/vendor/joomla/filesystem/src/File.php",
+        "kind": "file",
+        "line": 292,
+        "name": "file_put_contents"
+      }
+    },
+    {
+      "depth": 2,
+      "entry": {
+        "class": "Symfony\\Component\\HttpClient\\Response\\AsyncResponse",
+        "file": "libraries/vendor/symfony/http-client/Response/AsyncResponse.php",
+        "line": 186,
+        "method": "__destruct"
+      },
+      "path": [
+        {
+          "class": "Symfony\\Component\\HttpClient\\Response\\AsyncResponse",
+          "edge": "entry",
+          "file": "libraries/vendor/symfony/http-client/Response/AsyncResponse.php",
+          "line": 186,
+          "method": "__destruct"
+        },
+        {
+          "class": "Symfony\\Component\\HttpClient\\Response\\AsyncResponse",
+          "edge": "static passthru",
+          "file": "libraries/vendor/symfony/http-client/Response/AsyncResponse.php",
+          "line": 325,
+          "method": "passthru"
+        },
+        {
+          "class": "Symfony\\Component\\HttpClient\\Response\\AsyncResponse",
+          "edge": "static passthruStream",
+          "file": "libraries/vendor/symfony/http-client/Response/AsyncResponse.php",
+          "line": 349,
+          "method": "passthruStream"
+        }
+      ],
+      "score": 44,
+      "sink": {
+        "file": "libraries/vendor/symfony/http-client/Response/AsyncResponse.php",
+        "kind": "file",
+        "line": 401,
+        "name": "fwrite"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\CMS\\Table\\Content",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\CMS\\Table\\ContentHistory",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\CMS\\Table\\ContentType",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\CMS\\Table\\CoreContent",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\CMS\\Table\\Extension",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\CMS\\Table\\Language",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\CMS\\Table\\MenuType",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\CMS\\Table\\Module",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\CMS\\Table\\Nested",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\CMS\\Table\\Tuf",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\CMS\\Table\\Ucm",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\CMS\\Table\\Update",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\CMS\\Table\\UpdateSite",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\CMS\\Table\\User",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\CMS\\Table\\Usergroup",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\CMS\\Table\\ViewLevel",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Banners\\Administrator\\Table\\BannerTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Banners\\Administrator\\Table\\ClientTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Contact\\Administrator\\Table\\ContactTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Content\\Administrator\\Table\\FeaturedTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Fields\\Administrator\\Table\\FieldTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Fields\\Administrator\\Table\\GroupTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Finder\\Administrator\\Table\\FilterTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Finder\\Administrator\\Table\\LinkTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Guidedtours\\Administrator\\Table\\StepTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Guidedtours\\Administrator\\Table\\TourTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Installer\\Administrator\\Table\\UpdatesiteTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Mails\\Administrator\\Table\\TemplateTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Messages\\Administrator\\Table\\MessageTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Newsfeeds\\Administrator\\Table\\NewsfeedTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Privacy\\Administrator\\Table\\ConsentTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Privacy\\Administrator\\Table\\RequestTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Redirect\\Administrator\\Table\\LinkTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Scheduler\\Administrator\\Table\\LogTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Scheduler\\Administrator\\Table\\TaskTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Templates\\Administrator\\Table\\StyleTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    },
+    {
+      "depth": 3,
+      "entry": {
+        "class": "Joomla\\CMS\\User\\User",
+        "file": "libraries/src/User/User.php",
+        "line": 925,
+        "method": "__wakeup"
+      },
+      "path": [
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "entry",
+          "file": "libraries/src/User/User.php",
+          "line": 925,
+          "method": "__wakeup"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "method load",
+          "file": "libraries/src/User/User.php",
+          "line": 868,
+          "method": "load"
+        },
+        {
+          "class": "Joomla\\CMS\\User\\User",
+          "edge": "static getTable",
+          "file": "libraries/src/User/User.php",
+          "line": 579,
+          "method": "getTable"
+        },
+        {
+          "class": "Joomla\\Component\\Users\\Administrator\\Table\\MfaTable",
+          "defining": "Joomla\\CMS\\Table\\Table",
+          "edge": "static getInstance",
+          "file": "libraries/src/Table/Table.php",
+          "line": 289,
+          "method": "getInstance"
+        }
+      ],
+      "score": 41,
+      "sink": {
+        "file": "libraries/src/Table/Table.php",
+        "kind": "file",
+        "line": 323,
+        "name": "include"
+      }
+    }
+  ],
+  "sink_counts": {
+    "dispatch": 27,
+    "file": 52,
+    "terminal": 1
+  },
+  "visits": 12402
+}

@@ -1,0 +1,41 @@
+{
+  "candidates": [],
+  "counts": {
+    "candidates": 0,
+    "magic_methods": 0,
+    "markers": 1,
+    "reentry": 0
+  },
+  "label": "matrix",
+  "magic_methods": [],
+  "markers": [
+    {
+      "file": "probe.php",
+      "line": 6,
+      "text": "echo \"upload_progress \" . ini_get('session.upload_progress.enabled') . \"\\n\";"
+    }
+  ],
+  "php_files": 5,
+  "root": "lab-matrix/webroot",
+  "schema": 1,
+  "semgrep": {
+    "reason": "no candidate files",
+    "status": "skipped"
+  },
+  "tools": {
+    "ast-grep": {
+      "matches": 0,
+      "status": "ok"
+    },
+    "ctags": {
+      "status": "ok"
+    },
+    "rg": {
+      "status": "ok"
+    },
+    "semgrep": {
+      "reason": "no candidate files",
+      "status": "skipped"
+    }
+  }
+}
