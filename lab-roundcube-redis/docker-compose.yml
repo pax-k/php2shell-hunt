@@ -24,7 +24,7 @@ services:
     ports: ["18320:80"]
     depends_on: [redis]
     volumes:
-      - ../lab-roundcube/roundcubemail-1.6.11:/var/www/html
+      - ../lab-roundcube/html:/var/www/html
       - ./config.inc.php:/var/www/html/config/config.inc.php:ro
       - ./php-redis.ini:/usr/local/etc/php/conf.d/zz-roundcube-redis.ini:ro
       - ./apache-single.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
@@ -44,7 +44,7 @@ services:
     ports: ["18321:80"]
     depends_on: [redis]
     volumes:
-      - ../lab-roundcube/roundcubemail-1.6.11:/var/www/html
+      - ../lab-roundcube/html:/var/www/html
       - ./config-php.inc.php:/var/www/html/config/config.inc.php:ro
       - ./php-redis.ini:/usr/local/etc/php/conf.d/zz-roundcube-redis.ini:ro
       - ./apache-single.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro

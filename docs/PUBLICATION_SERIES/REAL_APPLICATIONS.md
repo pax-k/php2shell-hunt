@@ -192,12 +192,21 @@ producer, `session.upload_progress.enabled=On`, a writable file `save_path`, and
 | Roundcube + Redis | 8.4.27 | `session_storage='redis'`, `?prefix=` | single child | [`verify_roundcube_redis.py`](https://github.com/pax-k/php2shell-hunt/blob/main/poc/verify_roundcube_redis.py) `matrix` |
 | Joomla, ASAN only | 8.4.27 / 8.5.12 FPM | endpoint calling `unserialize($_POST['d'])` | any | [`lab-joomla/setup.sh`](https://github.com/pax-k/php2shell-hunt/blob/main/lab-joomla/setup.sh) |
 
-The Drupal and Roundcube application trees are **not tracked**: `lab-drupal/` and `lab-roundcube/`
-are git-ignored because they hold downloaded app code, so what ships is the driver plus the
-transcript in
+The Drupal and Roundcube application **trees** are downloaded, not tracked:
+`lab-drupal/html/` and `lab-roundcube/html/` are git-ignored because they hold
+upstream application code. The labs themselves now ship tracked setup,
+Compose/INI, endpoints, and plugin files, so a fresh clone can rebuild both:
+
+- [`lab-drupal/README.md`](https://github.com/pax-k/php2shell-hunt/blob/main/lab-drupal/README.md)
+  — `./setup.sh` downloads Drupal 11.4.11, then `docker compose up -d`.
+- [`lab-roundcube/README.md`](https://github.com/pax-k/php2shell-hunt/blob/main/lab-roundcube/README.md)
+  — `./setup.sh` downloads Roundcube 1.6.11 and installs the lab plugin.
+- [`lab-roundcube-redis/setup.sh`](https://github.com/pax-k/php2shell-hunt/blob/main/lab-roundcube-redis/setup.sh)
+  calls the Roundcube setup before starting Redis and the web profiles.
+
+The written transcripts remain in
 [`DRUPAL_115560.md`](https://github.com/pax-k/php2shell-hunt/blob/main/docs/DRUPAL_115560.md) /
-[`ROUNDCUBE_115560.md`](https://github.com/pax-k/php2shell-hunt/blob/main/docs/ROUNDCUBE_115560.md);
-Joomla and the Redis lab ship compose files because their trees are downloaded at setup time.
+[`ROUNDCUBE_115560.md`](https://github.com/pax-k/php2shell-hunt/blob/main/docs/ROUNDCUBE_115560.md).
 
 Two rules that are not optional. **Measure before firing:** deltas are per request shape (`0x7b019`
 direct Drupal, `0x7b875` race, `0x8d9c1` / `0x9e9c1` Roundcube) and a rebuild can drift by

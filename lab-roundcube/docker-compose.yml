@@ -1,0 +1,50 @@
+# lab-roundcube — LAB-ONLY CVE-2026-115560 precondition + Roundcube 1.6.11.
+#
+# Server config: php_serialize + session.upload_progress.enabled=On.
+# App: Roundcube 1.6.11, session_storage='php' (native file save handler) so
+# the record written by the upload-progress hook is the record the app reads.
+# The lab plugin (plugins/vd115560) is loaded before rcmail::session_init();
+# its top-level ini_set('session.serialize_handler','php') mirrors
+# rcube_session::register_session_handler() (which stock Roundcube only calls
+# for db/redis/memcache storage — see docs/ROUNDCUBE_115560.md).
+#
+#   ./setup.sh && docker compose up -d
+#   :18310  php:8.4.27-apache
+#   :18311  php:8.5.12-apache
+#
+# Single prefork child + MaxConnectionsPerChild=1 for deterministic worker
+# pairing. SYS_PTRACE/seccomp=unconfined only for the lab-assisted measure
+# step; the fire step is plain HTTP and needs neither.
+services:
+  rc8427:
+    image: php:8.4.27-apache
+    container_name: php2shell-rc-8427
+    ports: ["18310:80"]
+    volumes:
+      - ./html:/var/www/html
+      - ./php-roundcube.ini:/usr/local/etc/php/conf.d/zz-roundcube.ini:ro
+      - ./apache-single.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    command: >
+      bash -c "mkdir -p /tmp/sessions /tmp/rc-temp /tmp/rc-logs &&
+      chmod 1777 /tmp/sessions && chmod 777 /tmp/rc-temp /tmp/rc-logs &&
+      rm -f /tmp/rc.sqlite /tmp/rc.sqlite-wal /tmp/rc.sqlite-shm &&
+      apache2-foreground"
+
+  rc8512:
+    image: php:8.5.12-apache
+    container_name: php2shell-rc-8512
+    ports: ["18311:80"]
+    volumes:
+      - ./html:/var/www/html
+      - ./php-roundcube.ini:/usr/local/etc/php/conf.d/zz-roundcube.ini:ro
+      - ./php-roundcube-8512.ini:/usr/local/etc/php/conf.d/zz-roundcube-8512.ini:ro
+      - ./apache-single.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    command: >
+      bash -c "mkdir -p /tmp/sessions /tmp/rc-temp /tmp/rc-logs &&
+      chmod 1777 /tmp/sessions && chmod 777 /tmp/rc-temp /tmp/rc-logs &&
+      rm -f /tmp/rc.sqlite /tmp/rc.sqlite-wal /tmp/rc.sqlite-shm &&
+      apache2-foreground"

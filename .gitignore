@@ -6,8 +6,8 @@ research/vendor/
 *.swp
 
 # labs download their application trees at setup time; never commit them
-lab-drupal/
-lab-roundcube/
+lab-drupal/html/
+lab-roundcube/html/
 lab-wordpress/
 lab-joomla/webroot/
 lab-wp-zendmm/webroot/

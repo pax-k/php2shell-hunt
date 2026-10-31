@@ -1,0 +1,51 @@
+# LAB-ONLY Drupal 11.4.11 P5 through the CVE-2026-115560 session decoder.
+#
+# ./setup.sh first: it downloads Drupal 11.4.11 into html/ (not tracked).
+# The mount is the prepared tree (index.php, core/, vendor/autoload.php, vd.php).
+# The consumer switches the session handler to "php" at runtime.
+#
+#   :18300  php:8.4.27-apache  cleanup=Off (direct profile)
+#   :18301  php:8.5.12-apache  cleanup=Off (direct profile)
+#   :18302  php:8.4.27-apache  cleanup=On  (race variant, optional)
+#
+# SYS_PTRACE/seccomp=unconfined are only for the lab-assisted measure step;
+# fire is plain HTTP.
+services:
+  drupal8427:
+    image: php:8.4.27-apache
+    container_name: php2shell-115560-drupal-8427
+    ports: ["18300:80"]
+    volumes:
+      - ./html:/var/www/html
+      - ./php-vd.ini:/usr/local/etc/php/conf.d/zz-115560-drupal.ini:ro
+      - ./apache-single.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    command: >
+      bash -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && apache2-foreground"
+
+  drupal8512:
+    image: php:8.5.12-apache
+    container_name: php2shell-115560-drupal-8512
+    ports: ["18301:80"]
+    volumes:
+      - ./html:/var/www/html
+      - ./php-vd.ini:/usr/local/etc/php/conf.d/zz-115560-drupal.ini:ro
+      - ./apache-single.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    command: >
+      bash -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && apache2-foreground"
+
+  drupal8427race:
+    image: php:8.4.27-apache
+    container_name: php2shell-115560-drupal-8427-race
+    ports: ["18302:80"]
+    volumes:
+      - ./html:/var/www/html
+      - ./php-vd-race.ini:/usr/local/etc/php/conf.d/zz-115560-drupal.ini:ro
+      - ./apache-race.conf:/etc/apache2/conf-enabled/zz-lab.conf:ro
+    cap_add: [SYS_PTRACE]
+    security_opt: ["seccomp:unconfined"]
+    command: >
+      bash -c "mkdir -p /tmp/sessions && chmod 1777 /tmp/sessions && apache2-foreground"

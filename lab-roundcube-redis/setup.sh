@@ -5,6 +5,9 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$ROOT"
 
+# The compose file mounts ../lab-roundcube/html; build it if missing.
+../lab-roundcube/setup.sh
+
 docker compose down --remove-orphans >/dev/null 2>&1 || true
 docker compose build
 docker compose up -d

@@ -28,15 +28,17 @@ hook writes.
 
 ```
 lab-roundcube/
+  setup.sh                                 downloads Roundcube 1.6.11 into html/ (not tracked)
   docker-compose.yml                       :18310 8.4.27 | :18311 8.5.12
   php-roundcube.ini                        php_serialize, upload_progress On, cleanup Off, /tmp/sessions
   php-roundcube-8512.ini                   PHP 8.5 only: disable_functions=array_first (compat)
   apache-single.conf                       one prefork child, MaxConnectionsPerChild=1
+  config.inc.php                           session_storage='php' + plugin vd115560
+  plugin/vd115560/vd115560.php             runtime handler switch + gadget classes
   prime.php                                upload-progress writer without session_start()
   scan_prefix.php                          lab scanner (raw session-buffer candidate finder)
   evidence/8427.log, 8512.log, prime-8427.log
-  roundcubemail-1.6.11/config/config.inc.php
-  roundcubemail-1.6.11/plugins/vd115560/vd115560.php
+  html/                                    downloaded app tree (git-ignored)
 poc/verify_115560_roundcube.py             measure/fire/simple/prime/run driver
 docs/ROUNDCUBE_115560.md                   this file
 ```
@@ -198,7 +200,7 @@ Simple-gadget controls behaved identically (no `simple-dtor` in the log).
 ## Exact commands
 
 ```bash
-cd lab-roundcube && docker compose up -d && cd ..
+cd lab-roundcube && ./setup.sh && docker compose up -d && cd ..
 
 # simple gadget (both builds)
 python3 poc/verify_115560_roundcube.py \

