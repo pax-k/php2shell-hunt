@@ -6,7 +6,7 @@
 
 This repository contains working exploit code for PHP memory-safety bugs,
 including chains that run on patched releases. That is a deliberate choice, and
-this document records why, what was withheld, and what we are not claiming.
+this document records why, what remains under coordination, and what we are not claiming.
 
 ## What is published
 
@@ -16,8 +16,13 @@ this document records why, what was withheld, and what we are not claiming.
   reaching `zif_system` on 8.4.27 and 8.5.12.
 - The `var_destroy` re-entry UAF with its forged-object ladder on stock ZendMM.
 - Real-application profiles (Drupal 11, Roundcube 1.6.11, Joomla 5) and the
-  gadgets each does or does not provide.
+  gadgets each does or does not provide, with tracked setup for the Drupal and
+  Roundcube labs.
 - The full engine, labs, offsets, detection pack, and the negatives.
+- The corrected SJIS-mac out-of-bounds-write analysis, published on
+  2026-10-31: <https://paxdynamics.com/blog/php-mbstring-sjis-mac>. The
+  private vendor report remains a draft; publication of the article is not
+  vendor acknowledgement or a fix announcement.
 
 Every chain is labelled `CONFIG-GATED` or `LAB-ONLY`. Nothing is `STOCK`.
 
@@ -39,14 +44,18 @@ Every chain is labelled `CONFIG-GATED` or `LAB-ONLY`. Nothing is `STOCK`.
    `unserialize()`/`session_decode()` found no generic in-band seed. A repo that
    only published wins would misrepresent the state of the art.
 
-## What is withheld, and why
+## What remains under coordination
 
-| Item | Reason | Release condition |
-|---|---|---|
-| A `mbstring` SJIS-mac heap-buffer-overflow **write** | Published June 2026 as OOM/DoS with a hypothetical overflow. Our ASAN write primitive is a genuine step past that, and the bug is still unfixed on `master`. | After the vendor is contacted and acknowledges, or a stated review date |
+No finding in this repository is currently withheld. The SJIS-mac write
+analysis was published on 2026-10-31 at
+<https://paxdynamics.com/blog/php-mbstring-sjis-mac>; the corresponding private
+vendor report is still a draft and has not been sent from this repository. The
+article records its own limits and does not claim vendor acknowledgement, a
+fix, or publication approval.
 
-That is the only withheld finding. The two disclosure drafts in the private
-working tree are drafts; a draft is not publishable material.
+Acknowledgement, a review date, and publication approval are separate events.
+The review date below is a date to reassess the published analysis, not an
+automatic fix or disclosure milestone.
 
 ## What we are not claiming
 
@@ -75,7 +84,7 @@ exists so that a successful chain proves execution without producing a payload.
 
 ## Review
 
-Review date: **2027-01-31**. At review: re-check the held `mbstring` item, re-run
+Review date: **2027-01-31**. At review: re-check the published `mbstring` analysis, re-run
 the control matrix on the then-current branch, and correct any claim that has
 aged out. Corrections to this repository's analysis are welcome as issues;
 corrections that require exploit traffic against third-party systems are not.

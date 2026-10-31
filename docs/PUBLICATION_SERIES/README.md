@@ -42,16 +42,17 @@ Redis survey negative. Post 3 collects the falsified hypotheses, including the
 `__wakeup` / `__unserialize` re-entry, the in-band seed search, the version
 matrix, and the FPM leak.
 
-## Held
+## Companion article
 
-| Item | Status | Reason | Release condition |
-|---|---|---|---|
-| An `mbstring` SJIS-mac heap-buffer-overflow **write** | withheld | The June 2026 public report described OOM/DoS with a hypothetical overflow. The ASAN write primitive is a step past that, and the bug is still unfixed on `master`. | After the vendor is contacted and acknowledges, or a stated review date. |
+The separate `mbstring` SJIS-mac finding is published as
+[One byte past the buffer](https://paxdynamics.com/blog/php-mbstring-sjis-mac).
+It is not another stage in the session chain: the engine and application posts
+above do not depend on it.
 
-The hold policy, the review date (2027-01-31), and the reason this is the only
-withheld item are in [`../RESPONSIBLE_PUBLICATION.md`](https://github.com/pax-k/php2shell-hunt/blob/main/docs/RESPONSIBLE_PUBLICATION.md).
-No trigger or code for the held item appears in this series; the index names it
-only so the record is complete.
+The article supersedes the earlier allocator and stock-build claims and records
+its own limits. Vendor acknowledgement and a review date remain separate
+events; publication is not vendor approval or a fix announcement. Policy:
+[`../RESPONSIBLE_PUBLICATION.md`](https://github.com/pax-k/php2shell-hunt/blob/main/docs/RESPONSIBLE_PUBLICATION.md).
 
 ## What the series does not claim
 

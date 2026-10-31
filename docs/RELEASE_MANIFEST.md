@@ -1,8 +1,9 @@
 # Release manifest — 2026-10-31
 
-What this repository publishes, what it holds back, and the disclosure state
-that decided each row. Machine-checkable: every `shipped` path exists in the
-tree; every `held` path is absent and exists only in the private working tree.
+What this repository publishes, what stays in private working trees, and the
+disclosure state that decided each row. Machine-checkable: every `shipped` path
+exists in the tree; every `held` path is absent and exists only in a private
+working tree. A published document outside this tree is linked in the row.
 
 ## How the split was made
 
@@ -47,9 +48,9 @@ Three inputs, in order:
 
 | Path (private working tree) | Why |
 |---|---|
-| `docs/MBSTRING_SJISMAC_OVERFLOW.md` | Unfixed on `master`. The public June 2026 report described OOM/DoS; this repo's delta is a proven ASAN write. Holding it keeps the vendor message the first disclosure of the write. |
-| `docs/disclosure/php-mbstring-sjismac-overflow-report.md` | Not sent. A disclosure draft is not publishable material. |
-| `docs/disclosure/php-var-destroy-uaf-report.md` | Superseded: the underlying bug is public, and this document restates it as a patch-gap. Held to avoid implying a CVE request that the project's own policy excludes. |
+| `docs/MBSTRING_SJISMAC_OVERFLOW.md` | Internal analysis; the corrected public version is [One byte past the buffer](https://paxdynamics.com/blog/php-mbstring-sjis-mac), published 2026-10-31. This file stays private. |
+| `docs/disclosure/php-mbstring-sjismac-overflow-report.md` | Private vendor draft; not sent. Publication of the article is not vendor acknowledgement. |
+| `docs/disclosure/php-var-destroy-uaf-report.md` | Superseded: the underlying bug is public, and this document restates it as a patch-gap. Kept as history to avoid implying a CVE request that the project's own policy excludes. |
 
 References to held material were rewritten in `docs/STATUS.md`,
 `docs/ATTACK_SURFACE_MAP.md`, and `docs/RESEARCH_REVIEW_2026-10-30.md` to
