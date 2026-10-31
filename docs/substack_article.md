@@ -1,14 +1,22 @@
 # php2shell: Dissecting PHP's Critical Session Upload Progress Vulnerabilities
 
+> **Editor's note (2026-10-31).** This article predates the CVE-2026-115560 work and has
+> been corrected. The handler-mismatch chain described below was published independently
+> as CVE-2026-115560, with public PoCs, so the earlier "novel finding" framing is
+> retracted. The full correction record is
+> [`NOVELTY_115560_2026-10-31.md`](NOVELTY_115560_2026-10-31.md); the current write-ups are
+> in [`PUBLICATION_115560/BLOG_POST_115560.md`](PUBLICATION_115560/BLOG_POST_115560.md) and
+> the [`PUBLICATION_SERIES/`](PUBLICATION_SERIES/README.md) series.
+
 *CVE-2026-109618 & CVE-2026-109619 — From source code audit to three independent RCE chains*
 
 ---
 
 On October 20, 2026, PHP's security team announced an emergency release for two critical vulnerabilities rated CVSS v4.0 9.2, scheduled for October 21 at 14:00 UTC. Details leaked early, a proof-of-concept tool called "PHP2Shell" surfaced, and the security community scrambled to understand the impact.
 
-I spent the past 24 hours building a lab, reading PHP source code line by line, and constructing working exploits from scratch. Here's what I found — including attack paths that weren't in any of the leaked POCs.
+I spent the past 24 hours building a lab, reading PHP source code line by line, and constructing working exploits from scratch. Here is what I could build, and what I could not.
 
-**TL;DR:** Three independent RCE chains, all exploiting PHP's `session.upload_progress` feature (enabled by default since PHP 5.4). One requires LFI, one requires unserialize, and the third — the one I discovered during this research — chains a session handler mismatch with `__destruct` execution on deserialization failure.
+**TL;DR:** Three independent RCE chains, all exploiting PHP's `session.upload_progress` feature (enabled by default since PHP 5.4). One requires LFI, one requires unserialize, and the third — the handler-mismatch chain, since published as CVE-2026-115560 with independent public PoCs — chains a session handler mismatch with `__destruct` execution on deserialization failure.
 
 ## The Attack Surface
 
@@ -84,7 +92,7 @@ I turned this into full RCE on x86-64 by:
 2. Overwriting `var_dump`'s handler pointer with `zif_system` via `/proc/self/mem`
 3. Calling `var_dump('id > /tmp/proof')` → `system('id > /tmp/proof')` → RCE
 
-## The Novel Finding: Handler Mismatch → `__destruct`
+## The handler-mismatch chain
 
 Here's where it gets interesting. During my analysis, I discovered a chain that doesn't require LFI or application-level `unserialize()`.
 
