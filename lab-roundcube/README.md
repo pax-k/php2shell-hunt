@@ -1,6 +1,6 @@
 # lab-roundcube — plugin-assisted Roundcube 1.6.11 profile
 
-LAB-ONLY, loopback only. This lab tests the CVE-2026-115560 session-decoder
+LAB-ONLY, loopback only. Compose publishes each web port on `127.0.0.1` only. This lab tests the CVE-2026-115560 session-decoder
 entry point against Roundcube 1.6.11. The fixed terminal command is
 `id>/tmp/vd 2>&1`; there is no arbitrary-command interface.
 
@@ -32,7 +32,7 @@ outputs are in `evidence/`.
 docker compose up -d       # :18310 (8.4.27), :18311 (8.5.12)
 ```
 
-Requirements: `docker`, `curl`, `tar`. The application tree is downloaded from
+Requirements: `docker`, `curl`, `tar`, `shasum`. The setup verifies the pinned release archive before extraction. The application tree is downloaded from
 the official release asset and is deliberately excluded from Git.
 
 ## Driver

@@ -1,24 +1,24 @@
 #!/bin/sh
-# Build the lab-drupal webroot: Drupal 11.4.11 core (official release tarball,
-# includes vendor/) plus the tracked 115560 consumer endpoints. The application
-# tree is downloaded, not committed (see .gitignore); re-running is idempotent.
+# LAB-ONLY setup. Downloads a pinned public application release and adds the
+# tracked research endpoints. Existing application trees are preserved.
 set -eu
 cd "$(dirname "$0")"
 
-DV=11.4.11
-URL="https://ftp.drupal.org/files/projects/drupal-${DV}.tar.gz"
-
-if [ ! -f html/vendor/autoload.php ]; then
-    echo "[*] downloading Drupal ${DV} ..."
-    rm -rf html
-    mkdir -p html
-    curl -fsSLo /tmp/drupal.tar.gz "$URL"
-    tar -xzf /tmp/drupal.tar.gz -C html --strip-components=1
-    rm -f /tmp/drupal.tar.gz
+if [ ! -e html ]; then
+    lab_tmp=$(mktemp -d)
+    trap 'rm -rf "$lab_tmp"' EXIT HUP INT TERM
+    curl -fsSLo "$lab_tmp/release.tar.gz" 'https://ftp.drupal.org/files/projects/drupal-11.4.11.tar.gz'
+    printf '%s  %s\n' 'f6935da6ddfb2b3bf5c79c5118018be91021f7d5e12901eed1a71de140708e13' "$lab_tmp/release.tar.gz" | shasum -a 256 -c -
+    mkdir "$lab_tmp/html"
+    tar -xzf "$lab_tmp/release.tar.gz" -C "$lab_tmp/html" --strip-components=1
+    test -f "$lab_tmp/html/vendor/autoload.php"
+    mv "$lab_tmp/html" html
 fi
 
-# 115560 consumer, prime, seed, and measurement endpoints. They require only
-# vendor/autoload.php; no database or Drupal bootstrap is needed for the lab.
-cp endpoints/vd*.php html/
+if [ ! -f html/vendor/autoload.php ]; then
+    echo "Existing html/ is incomplete. Preserve or move it before setup." >&2
+    exit 1
+fi
 
-echo "[+] webroot ready: $(pwd)/html"
+cp endpoints/vd*.php html/
+echo "[+] 11.4.11 lab webroot ready: $(pwd)/html"

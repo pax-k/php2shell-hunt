@@ -1,6 +1,6 @@
 # lab-drupal — Drupal 11.4.11 P5 profile
 
-LAB-ONLY, loopback only. This lab tests the CVE-2026-115560 session-decoder
+LAB-ONLY, loopback only. Compose publishes each web port on `127.0.0.1` only. This lab tests the CVE-2026-115560 session-decoder
 entry point against Drupal 11.4.11 core. The fixed terminal command is
 `id>/tmp/vd 2>&1`; there is no arbitrary-command interface.
 
@@ -29,7 +29,7 @@ scaffold.
 docker compose up -d       # :18300 (8.4.27), :18301 (8.5.12), :18302 (race)
 ```
 
-Requirements: `docker`, `curl`, `tar`. The application tree is downloaded from
+Requirements: `docker`, `curl`, `tar`, `shasum`. The setup verifies the pinned release archive before extraction. The application tree is downloaded from
 the official Drupal release and is deliberately excluded from Git.
 
 ## Profiles

@@ -19,7 +19,7 @@ services:
   rc8427:
     image: php:8.4.27-apache
     container_name: php2shell-rc-8427
-    ports: ["18310:80"]
+    ports: ["127.0.0.1:18310:80"]
     volumes:
       - ./html:/var/www/html
       - ./php-roundcube.ini:/usr/local/etc/php/conf.d/zz-roundcube.ini:ro
@@ -35,7 +35,7 @@ services:
   rc8512:
     image: php:8.5.12-apache
     container_name: php2shell-rc-8512
-    ports: ["18311:80"]
+    ports: ["127.0.0.1:18311:80"]
     volumes:
       - ./html:/var/www/html
       - ./php-roundcube.ini:/usr/local/etc/php/conf.d/zz-roundcube.ini:ro

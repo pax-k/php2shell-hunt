@@ -106,3 +106,13 @@ $ grep -rn "\.\./lab/" --include="*.yml" --include="*.sh" .
 - Send the held `mbstring` report, then revisit the review date (2027-01-31).
 - Stock-baseline work: remove one gate from a proven chain (`docs/RCE_PATH.md`
   stage 6), cheapest first.
+
+## 2026-11-02 — Application lab package checks
+
+**Change:** The published Drupal and Roundcube setup scripts now verify the SHA-256 of their pinned upstream archives before extraction. They preserve an existing application tree. The Drupal, Roundcube, and dependent Redis Compose files bind their exposed ports to `127.0.0.1`.
+
+**Verification:** Isolated clean setup from the public scripts succeeded for Drupal 11.4.11 and Roundcube 1.6.11; both archive checks passed. Shell syntax and Compose parsing passed. `scripts/check.sh` passed: 66 gate checks and 25 tests.
+
+**Limit:** No exploit reproduction was rerun for this packaging change. The published application results remain the dated lab receipts in `docs/DRUPAL_115560.md` and `docs/ROUNDCUBE_115560.md`. This is publication support, not progress on the stock-baseline G2 objective.
+
+**Next:** A reader can rebuild either app lab from its README and run the named verifier against local containers.
